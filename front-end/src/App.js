@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import Footer from './components/Footer';
 import Home from './components/Home';
 import {
         BrowserRouter as Router,
@@ -29,9 +30,12 @@ class App extends Component {
     const apiKey = '&appid=c2a8f705fd5c4cdcab53ed003fbf3927';
     const url = call + cityId + units + apiKey;
 
+    // Making one call to the openweathermap API, that get the object of five cities.
     axios.get(url)
     .then((res) => {
-    //console.log(res.data.list);
+    // console.log(res.data.list);
+
+    // Loop to setState each object (data from five cities).
       for(var c = 0; c < 5; c += 1) {
         if (c === 0) {
           this.setState({
@@ -64,7 +68,7 @@ class App extends Component {
     .catch((error) => {
       console.log(error);
     });
-   }
+  }
 
   render() {
     return (
@@ -74,6 +78,8 @@ class App extends Component {
             <Route path="/weather-forecast/" component={() => 
               (<Home state={this.state} />) }/>
           </Switch>
+          <Route startsWith path="/weather-forecast/" component={() =>
+              (<Footer />) }/>
         </div>
       </Router>
     );
