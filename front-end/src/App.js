@@ -31,9 +31,7 @@ class App extends Component {
 
     axios.get(url)
     .then((res) => {
-
-      // console.log(res.data.list);
-
+    //console.log(res.data.list);
       for(var c = 0; c < 5; c += 1) {
         if (c === 0) {
           this.setState({
@@ -61,15 +59,7 @@ class App extends Component {
           })
         }
       }
-
-      /*
       console.log(this.state.first_city);
-      console.log(this.state.second_city);
-      console.log(this.state.third_city);
-      console.log(this.state.fourth_city);
-      console.log(this.state.fifth_city);
-      */
-
     })
     .catch((error) => {
       console.log(error);
@@ -81,7 +71,8 @@ class App extends Component {
       <Router>
         <div className="app-container">
           <Switch>
-            <Route path="/weather-forecast/" component={() => (<Home />) }/>
+            <Route path="/weather-forecast/" component={() => 
+              (<Home state={this.state} />) }/>
           </Switch>
         </div>
       </Router>
