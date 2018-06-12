@@ -58,7 +58,7 @@ h2 {
 /* =============== APP =============== */
 
 .app-container {
-  margin: 80px 50px;
+  margin: 80px 50px 10px 50px;
   text-align: center;
 }
 
@@ -84,6 +84,29 @@ h2 {
   background: rgba(0, 0, 0, .2);
 }
 
+/* =============== FOOTER =============== */
+
+footer {
+	width: 100%;
+	bottom: 0;
+	padding: 25px 0;
+}
+
+p.footer {
+	font-size: 14px;
+	color: #787f87;
+	text-align: center;
+}
+
+a.footer {
+	color: #a5aaaf;
+	text-decoration: none;
+}
+
+a.footer:hover {
+	color: #bac0c6;
+}
+
 /* =============== RESPONSIVE DESIGN FOR TABLET =============== */
 
 @media only screen and (max-width: 900px) {
@@ -93,7 +116,7 @@ h2 {
 }
 
 .app-container {
-  margin: 60px 10px;
+  margin: 60px 10px 10px 10px;
 }
 
 .summary-container {
