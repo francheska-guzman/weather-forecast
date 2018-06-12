@@ -24,7 +24,7 @@ class App extends Component {
 
   componentWillMount() {
     var call = 'http://api.openweathermap.org/data/2.5/group?id=';
-    var cityId = '5128581,3451190,3675707,5601538,292223';
+    var cityId = '5128581,498817,3451190,3675707,292223';
     var units = '&units=imperial';
     const apiKey = '&appid=c2a8f705fd5c4cdcab53ed003fbf3927';
     const url = call + cityId + units + apiKey;

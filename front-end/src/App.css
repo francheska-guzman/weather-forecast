@@ -1,28 +1,125 @@
-.App {
+/* 
+
+Agency Within
+Front End Developer Test: Weather Forecast
+96 hours starting from June 11, 2018 at 9:00am
+
+Francheska Guzman
+
+COLOR GUIDE
+
+Black		#000000
+Blue 		#0f3150
+Grey		#bac0c6, #a5aaaf, #787f87
+White 	#ffffff
+
+*/
+
+/* =============== GLOBAL =============== */
+
+@import url('https://fonts.googleapis.com/css?family=Pontano+Sans');
+
+* {
+  transition: 1s;
+}
+
+body {
+  height: 100%;
+  overflow: auto;
+	-webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat:no-repeat;
+  background: #0f3150;
+  background: -webkit-linear-gradient(#000000 0, #0f3150 66%) fixed;
+  background: -moz-linear-gradien(#000000 0, #0f3150 66%) fixed;
+  background: -ms-linear-gradient(#000000 0, #0f3150 66%) fixed;
+  background: -o-linear-gradient(#000000 0, #0f3150 66%) fixed;
+	background: linear-gradient(#000000 0, #0f3150 66%) fixed;
+  font-family: 'Pontano Sans', sans-serif;
+}
+
+html {
+    overflow: hidden;
+    height: 100%;
+}
+
+h1 {
+  color: #ffffff;
+  font-size: 28px;
+}
+
+h2 {
+  color: #bac0c6;
+  font-size: 20px;
+}
+
+/* =============== APP =============== */
+
+.app-container {
+  margin: 80px 50px;
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+/* =============== HOME =============== */
+
+.home-summary {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+/* =============== SUMMARY =============== */
+
+.summary-container {
+  width: 350px;
+  height: 200px;
+  margin: 5px;
+  padding: 30px 20px;
+  background: rgba(0, 0, 0, 0.07);
 }
 
-.App-title {
-  font-size: 1.5em;
+.summary-container:hover{
+  background: rgba(0, 0, 0, .2);
 }
 
-.App-intro {
-  font-size: large;
+/* =============== RESPONSIVE DESIGN FOR TABLET =============== */
+
+@media only screen and (max-width: 900px) {
+
+* {
+  transition: 1s;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.app-container {
+  margin: 60px 10px;
+}
+
+.summary-container {
+  width: 250px;
+  height: 200px;
+  padding: 15px 10px;
+}
+  
+}
+
+/* =============== RESPONSIVE DESIGN FOR MOBILE =============== */
+
+@media only screen and (max-width: 580px) {
+
+* {
+  transition: 1s;
+}
+  
+.home-summary {
+  flex-direction: column;
+}
+
+.summary-container {
+  margin: 5px 0;
+  width: auto;
+  height: 200px;
+}
+
 }

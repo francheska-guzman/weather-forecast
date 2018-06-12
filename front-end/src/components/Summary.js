@@ -6,7 +6,7 @@ class Summary extends Component {
   render() {
     return (
       <div className="summary-container"> 
-        <h1>{this.props.state.name}</h1>
+        <h2>{this.props.state.name}</h2>
       </div>
     );
   }
