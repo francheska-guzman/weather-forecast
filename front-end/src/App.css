@@ -47,12 +47,35 @@ html {
 
 h1 {
   color: #ffffff;
-  font-size: 28px;
+  font-size: 35px;
 }
 
 h2 {
-  color: #bac0c6;
-  font-size: 20px;
+  color: #ffffff;
+  font-size: 25px;
+  margin: 0;
+}
+
+h3 {
+  color: #a5aaaf;
+  font-size: 18px;
+  text-transform: capitalize;
+  margin: 0;
+}
+
+h4 {
+  color: #ffffff;
+  font-size: 50px; 
+  margin: 0;
+}
+
+.flex {
+  display: flex;
+}
+
+.row-column {
+  flex: 1;
+  flex-direction: row;
 }
 
 /* =============== APP =============== */
@@ -73,15 +96,19 @@ h2 {
 /* =============== SUMMARY =============== */
 
 .summary-container {
-  width: 350px;
+  width: 400px;
   height: 200px;
   margin: 5px;
-  padding: 30px 20px;
+  padding: 25px 10px;
   background: rgba(0, 0, 0, 0.07);
 }
 
 .summary-container:hover{
   background: rgba(0, 0, 0, .2);
+}
+
+.summary-units {
+  font-size: 18px;
 }
 
 /* =============== FOOTER =============== */
@@ -115,14 +142,34 @@ a.footer:hover {
   transition: 1s;
 }
 
+h2 {
+  font-size: 25px;
+}
+
+h3 {
+  font-size: 16px;
+}
+
+h4 {
+  font-size: 35px; 
+}
+
+.row-column {
+  flex-direction: column;
+}
+
 .app-container {
   margin: 60px 10px 10px 10px;
 }
 
 .summary-container {
   width: 250px;
-  height: 200px;
+  height: 150px;
   padding: 15px 10px;
+}
+
+.summary-units {
+  font-size: 16px;
 }
   
 }
@@ -143,6 +190,9 @@ a.footer:hover {
   margin: 5px 0;
   width: auto;
   height: 200px;
+}
+.row-column {
+  flex-direction: row;
 }
 
 }

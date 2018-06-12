@@ -10,15 +10,35 @@ class Home extends Component {
         <h1>Weather Forecast</h1>
         {/* Reusing the Summary component to display the oversight of each city. */}
         <section className="home-summary">
-          <Summary state={this.props.state.first_city} />
-          <Summary state={this.props.state.second_city} />
+          <Summary 
+            state={this.props.state.first_city}  
+            main={this.props.state.first_city_main} 
+            weather={this.props.state.first_city_weather}
+          />
+          <Summary 
+            state={this.props.state.second_city} 
+            main={this.props.state.second_city_main} 
+            weather={this.props.state.second_city_weather}
+          />
         </section>
         <section className="home-summary">
-          <Summary state={this.props.state.third_city} />
-          <Summary state={this.props.state.fourth_city} />
+          <Summary 
+            state={this.props.state.third_city} 
+            main={this.props.state.third_city_main} 
+            weather={this.props.state.third_city_weather}
+          />
+          <Summary 
+            state={this.props.state.fourth_city} 
+            main={this.props.state.fourth_city_main} 
+            weather={this.props.state.fourth_city_weather}
+          />
         </section>
         <section className="home-summary">
-          <Summary state={this.props.state.fifth_city} />
+          <Summary 
+            state={this.props.state.fifth_city} 
+            main={this.props.state.fifth_city_main} 
+            weather={this.props.state.fifth_city_weather}
+          />
         </section>
       </div>
     );
