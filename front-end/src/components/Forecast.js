@@ -15,8 +15,10 @@ class Forecast extends Component {
       wind: []
     }
     this.getCity = this.getCity.bind(this);
+    this.pressure = this.pressure.bind(this);
     this.sunrise = this.sunrise.bind(this);
     this.sunset = this.sunset.bind(this);
+    this.visibility = this.visibility.bind(this);
   }
 
   componentWillMount() {
@@ -93,12 +95,56 @@ class Forecast extends Component {
     }
   }
 
-  sunrise() {
+  pressure() {
+    var pressure = this.state.main.pressure;
 
+    // Convert pressure from hPa to inHg.
+    if(isNaN(pressure) === false) {
+      pressure = pressure/33.863886666667;
+      pressure = Math.round(pressure);
+
+      return pressure;
+    }
+  }
+
+  sunrise() {
+    var seconds = this.state.sys.sunrise;
+    var date = new Date(seconds * 1000);
+    var time = date.toLocaleTimeString();
+    
+    return time;
   }
 
   sunset() {
+    var seconds = this.state.sys.sunset;
+    var date = new Date(seconds * 1000);
+    var time = date.toLocaleTimeString();
+    
+    return time;
+  }
 
+  wind() {
+    var wind = this.state.wind.speed;
+
+    if(isNaN(wind) === false) {
+      // Convert meters per second to miles per hour.
+      wind = wind/2.23694;
+      // Rounded to the nearest integer.
+      wind = Math.round(wind);
+
+      return wind;
+    }
+  }
+
+  visibility() {
+    var visibility = this.state.city.visibility;
+
+    if(isNaN(visibility) === false) {
+      visibility = visibility * 0.0006213712;
+      visibility = Math.round(visibility);
+
+      return visibility;
+    }
   }
 
   render() {
@@ -107,12 +153,19 @@ class Forecast extends Component {
         <section className="five-day-forecast">
         
         </section>
-        <section className="current-weather">
-          <h5>Sunrise: <span className="forecast-data">{this.sunrise()}</span></h5>
-          <h5>Sunset: <span className="forecast-data">{this.sunset()}</span></h5>
-          <h5>Humidity: <span className="forecast-data">{this.state.main.humidity}%</span></h5>
-          <h5>Pressure: <span className="forecast-data"></span></h5>
-        </section>
+        
+        <div className="current-weather">
+          <section className="column-row">
+            <h5>Sunrise: <span className="forecast-data">{this.sunrise()} <span className="data-type">GMT -4000</span></span></h5>
+            <h5>Visibility: <span className="forecast-data">{this.visibility()} <span className="data-type">mi</span></span></h5>
+            <h5>Wind: <span className="forecast-data">{this.wind()} <span className="data-type">mph</span></span></h5>
+          </section>
+          <section className="column-row">
+            <h5>Sunset: <span className="forecast-data">{this.sunset()} <span className="data-type">GMT -4000</span></span></h5>
+            <h5>Humidity: <span className="forecast-data">{this.state.main.humidity}<span className="data-type">%</span></span></h5>
+            <h5>Pressure: <span className="forecast-data">{this.pressure()}<span className="data-type"> inHg</span></span></h5>
+          </section>
+        </div>
       </div>
     );
   }

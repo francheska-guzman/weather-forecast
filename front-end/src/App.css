@@ -35,6 +35,7 @@ body {
   background: -o-linear-gradient(#000000 0, #0f3150 66%) fixed;
 	background: linear-gradient(#000000 0, #0f3150 66%) fixed;
   font-family: 'Pontano Sans', sans-serif;
+  letter-spacing: 1px;
 }
 
 html {
@@ -72,7 +73,7 @@ h4 {
 h5 {
   text-align: left;
   color: #a5aaaf;
-  font-size: 16px;
+  font-size: 14px;
   margin: 5px 0;
 }
 
@@ -82,6 +83,10 @@ a {
 
 .flex {
   display: flex;
+}
+
+.column-row {
+  flex: 1;
 }
 
 .row-column {
@@ -134,8 +139,10 @@ a {
 /* =============== FORECAST =============== */
 
 .current-weather {
+  display: flex;
+  flex-direction: row;
   width: auto;
-  height: 100px;
+  height: auto;
   margin: 10px auto;
   padding: 30px;
   background: rgba(0, 0, 0, 0.2);
@@ -159,6 +166,10 @@ a {
   margin: 10px auto;
   padding: 0px;
   background: rgba(0, 0, 0, 0.2);
+}
+
+.data-type {
+  font-size: 12px;
 }
 
 /* =============== FOOTER =============== */
@@ -249,8 +260,13 @@ h4 {
   width: auto;
   height: 200px;
 }
+
 .row-column {
   flex-direction: row;
+}
+
+.current-weather {
+  flex-direction: column;
 }
 
 }
