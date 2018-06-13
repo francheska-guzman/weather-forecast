@@ -10,7 +10,8 @@ import {
         Switch
         } from 'react-router-dom';
 
-console.log("%cWelcome to the Weather Forecast. Developed by Francheska Guzman.", "color: #ad8401; font-size: 16px");
+console.log("%cWelcome to the Weather Forecast.", "color: #ad8401; font-size: 16px");
+console.log("%cDeveloped by Francheska Guzman.", "color: #0f3150; font-size: 14px");
 
 class App extends Component {
   constructor(){
@@ -56,7 +57,7 @@ class App extends Component {
 
   componentDidMount() {
     var api = 'http://api.openweathermap.org/data/2.5/';
-    var cities = 'group?id=5128581,498817,3451190,3675707,292223';
+    var cities = 'group?id=5128581,498817,3451190,3675707,4568138';
     var system = "&units=imperial";
     const key = '&appid=c2a8f705fd5c4cdcab53ed003fbf3927';
     const url = api + cities + system + key;
@@ -64,7 +65,6 @@ class App extends Component {
     // Making a call to the openweathermap API, that get the object of five cities.
     fetch(url)
       .then((res) => {
-    // console.log(res.data.list);
        return res.json();
     }).then(data => {
     this.setState({
@@ -104,8 +104,7 @@ class App extends Component {
       fifth_city_weather: data.list[4].weather[0],
       fifth_city_wind: data.list[4].wind
       })
-      console.log("%cReact State:", "color: #0f3150; font-size: 14px");
-      console.log(this.state);
+      // console.log(this.state);
     })
     .catch((error) => {
       console.log(error);

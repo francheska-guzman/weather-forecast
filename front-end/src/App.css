@@ -77,6 +77,13 @@ h5 {
   margin: 5px 0;
 }
 
+h6 {
+  font-size: 16px;
+  color: #ffc406;
+  display: inline;
+  margin: 5px;
+}
+
 a {
   text-decoration: none;
 }
@@ -87,6 +94,7 @@ a {
 
 .column-row {
   flex: 1;
+  flex-direction: column;
 }
 
 .row-column {
@@ -112,15 +120,24 @@ a {
 /* =============== SUMMARY =============== */
 
 .summary-container {
+  margin: 5px;
   width: 400px;
   height: 200px;
-  margin: 5px;
   padding: 25px 10px;
   background: rgba(0, 0, 0, 0.07);
 }
 
 .summary-container:hover{
   background: rgba(0, 0, 0, .2);
+}
+
+.current-city {
+  margin: auto;
+  display: block;
+  width: auto;
+  height: 200px;
+  padding: 25px 10px;
+  background: rgba(0, 0, 0, 0.07);
 }
 
 .summary-image {
@@ -215,6 +232,10 @@ h4 {
   flex-direction: column;
 }
 
+.column-row {
+  flex-direction: row;
+}
+
 .app-container {
   margin: 60px 10px 10px 10px;
 }
@@ -247,6 +268,14 @@ h3, .summary-units {
   font-size: 17px;
 }
 
+h5 {
+  margin: 10px 0 0 0;
+}
+
+h6 {
+  font-size: 14px;
+}
+
 h4 {
   font-size: 60px; 
 }
@@ -255,7 +284,7 @@ h4 {
   flex-direction: column;
 }
 
-.summary-container {
+.summary-container, .current-city {
   margin: 5px 0;
   width: auto;
   height: 200px;

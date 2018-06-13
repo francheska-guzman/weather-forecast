@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import CurrentCity from './CurrentCity';
+import FiveDays from './FiveDays';
 
 // console.log("Forecast is working.");
 
@@ -21,19 +23,18 @@ class Forecast extends Component {
     this.visibility = this.visibility.bind(this);
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.getCity();
   }
 
   getCity() {
     var city = window.location.href.split("/").pop();
-    // console.log(city);
 
     if (city !== undefined) {
       city = city.split('+').join(' ');
+      // console.log(city);
       
       if (city === this.props.state.first_city.name) {
-        // console.log(city);
         this.setState({
           city: this.props.state.first_city,
           clouds: this.props.state.first_city_clouds,
@@ -45,7 +46,6 @@ class Forecast extends Component {
         })
       }
       else if (city === this.props.state.second_city.name) {
-        // console.log(city);
         this.setState({
           city: this.props.state.second_city,
           clouds: this.props.state.second_city_clouds,
@@ -57,7 +57,6 @@ class Forecast extends Component {
         })
       }
       else if (city === this.props.state.third_city.name) {
-        // console.log(city);
         this.setState({
           city: this.props.state.third_city,
           clouds: this.props.state.third_city_clouds,
@@ -69,7 +68,6 @@ class Forecast extends Component {
         })
       }
       else if (city === this.props.state.fourth_city.name) {
-        // console.log(city);
         this.setState({
           city: this.props.state.fourth_city,
           clouds: this.props.state.fourth_city_clouds,
@@ -81,7 +79,6 @@ class Forecast extends Component {
         })
       }
       else {
-        // console.log(city);
         this.setState({
           city: this.props.state.fifth_city,
           clouds: this.props.state.fifth_city_clouds,
@@ -151,9 +148,15 @@ class Forecast extends Component {
     return (
       <div className="forecast-container">
         <section className="five-day-forecast">
-        
+          <FiveDays day_1={this.state} />
+          <FiveDays day_2={this.state} />
+          <FiveDays day_3={this.state} />
+          <FiveDays day_4={this.state} />
+          <FiveDays day_5={this.state} />
         </section>
-        
+          <CurrentCity 
+            state={this.state} 
+          />
         <div className="current-weather">
           <section className="column-row">
             <h5>Sunrise: <span className="forecast-data">{this.sunrise()} <span className="data-type">GMT -4000</span></span></h5>
