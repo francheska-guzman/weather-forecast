@@ -20,10 +20,9 @@ class Summary extends Component {
 }
 
   handleParams() {
-    var city = this.props.state.name;
+    var city = this.props.name;
     
     if (city !== undefined) {
-      city = city.toLowerCase();
       city = city.replace(/ /g, '+');
       return city;
     }
@@ -60,17 +59,19 @@ class Summary extends Component {
 
   // This function prevent from display decimals.
   handleWeatherTemperature() {
-    var temperature = this.props.main.temp;
+    var temperature = this.props.temp;
     temperature = Math.round(temperature);
 
-    return <h4>{temperature} <sup className="summary-units">°F</sup></h4>
+    if(isNaN(temperature) === false) {
+      return <h4>{temperature} <sup className="summary-units">°F</sup></h4>
+    }
   }
 
   render() {
     return (
       <Link className="summary-link" to={`/weather-forecast/${this.handleParams()}`}>'
       <div className="summary-container"> 
-        <h2>{this.props.state.name}</h2>
+        <h2>{this.props.name}</h2>
         <h3>{this.props.weather.description}</h3>
         <div className="flex">
           <section className="row-column">{this.handleWeatherImage()}</section>
