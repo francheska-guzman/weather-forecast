@@ -78,9 +78,9 @@ class App extends Component {
           <Route startsWith path="/weather-forecast/" component={() =>
               (<Header />) }/>
           <Switch>
-            <Route path="/weather-forecast/" component={() => 
+            <Route exact path="/weather-forecast/" component={() => 
               (<Home state={this.state} />) }/>
-            <Route path="/weather-forecast/:id" component={() => 
+            <Route path="/weather-forecast/:city" component={() => 
               (<FullWeatherDescription state={this.state} />) }/>
           </Switch>
           <Route startsWith path="/weather-forecast/" component={() =>

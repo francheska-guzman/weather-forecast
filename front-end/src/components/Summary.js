@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 // Weather condition images
 import atmosphere from "../weather-conditions/atmosphere.png";
 import clear from "../weather-conditions/clear.png";
@@ -13,14 +14,24 @@ import thunder from "../weather-conditions/thunder.png";
 class Summary extends Component {
   constructor(){
     super();
+    this.handleParams = this.handleParams.bind(this);
     this.handleWeatherImage = this.handleWeatherImage.bind(this);
     this.handleWeatherTemperature = this.handleWeatherTemperature.bind(this);
 }
 
+  handleParams() {
+    var city = this.props.state.name;
+    
+    if (city !== undefined) {
+      city = city.toLowerCase();
+      city = city.replace(/ /g, '+');
+      return city;
+    }
+  }
+
   /* 
-  The handleWeatherImage function shows the image of the current weather condition.
-  I used https://openweathermap.org/weather-conditions to identify each range of numbers with
-  the weather condition.
+  Render an image of the current weather condition. I used https://openweathermap.org/weather-conditions 
+  to identify each range of numbers with the weather condition.
   */
   handleWeatherImage() {
     // console.log(this.props.weather.id);
@@ -57,6 +68,7 @@ class Summary extends Component {
 
   render() {
     return (
+      <Link className="summary-link" to={`/weather-forecast/${this.handleParams()}`}>'
       <div className="summary-container"> 
         <h2>{this.props.state.name}</h2>
         <h3>{this.props.weather.description}</h3>
@@ -65,6 +77,7 @@ class Summary extends Component {
           <section className="row-column">{this.handleWeatherTemperature()}</section>
         </div>
       </div>
+      </Link>
     );
   }
 }
