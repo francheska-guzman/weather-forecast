@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import Summary from './Summary';
 
-console.log("Home is working.");
+// console.log("Home is working.");
 
 class Home extends Component {
   render() {
     return (
       <div className="home-container"> 
         <h1>Weather Forecast</h1>
-        {/* Reusing the Summary component to display the oversight of each city. */}
+        {/* Reusing the Summary component to display the summary of each city. */}
         <section className="home-summary">
           <Summary 
             state={this.props.state.first_city}  

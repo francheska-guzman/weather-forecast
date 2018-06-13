@@ -8,7 +8,7 @@ import rain from "../weather-conditions/rain.png";
 import snow from "../weather-conditions/snow.png";
 import thunder from "../weather-conditions/thunder.png";
 
-console.log("Summary is working.");
+// console.log("Summary is working.");
 
 class Summary extends Component {
   constructor(){
@@ -36,23 +36,21 @@ class Summary extends Component {
     else if (this.props.weather.id === 800) {
       return <img className="summary-image" src={clear} alt="Weather Condition" />    
     }
-    else {
+    else if (this.props.weather.id >= 801 && this.props.weather.id <= 804) {
       return <img className="summary-image" src={clouds} alt="Weather Condition" />    
     }
   }
 
   render() {
     return (
-      <section className="summary-container"> 
+      <div className="summary-container"> 
         <h2>{this.props.state.name}</h2>
         <h3>{this.props.weather.description}</h3>
         <div className="flex">
-          <div className="row-column">{this.handleWeatherImage()}</div>
-          <div className="row-column">
-            <h4>{this.props.main.temp} <sup className="summary-units">°F</sup></h4>
-          </div>
+          <section className="row-column">{this.handleWeatherImage()}</section>
+          <section className="row-column"><h4>{this.props.main.temp} <sup className="summary-units">°F</sup></h4></section>
         </div>
-      </section>
+      </div>
     );
   }
 }
