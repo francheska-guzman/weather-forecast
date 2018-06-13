@@ -12,12 +12,13 @@ Black		#000000
 Blue 		#0f3150
 Grey		#bac0c6, #a5aaaf, #787f87
 White 	#ffffff
+Yellow  #ffc406, #ad8401
 
 */
 
 /* =============== GLOBAL =============== */
 
-@import url('https://fonts.googleapis.com/css?family=Pontano+Sans');
+@import url('https://fonts.googleapis.com/css?family=Encode+Sans+Semi+Expanded|Pontano+Sans');
 
 body {
   height: 100%;
@@ -45,6 +46,7 @@ h1 {
   background: -webkit-linear-gradient( #ad8401 0, #ffc406 66%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  font-family: 'Encode Sans Semi Expanded', sans-serif;
   font-size: 40px;
 }
 
@@ -65,6 +67,13 @@ h4 {
   color: #ffffff;
   font-size: 60px; 
   margin: 5px;
+}
+
+h5 {
+  text-align: left;
+  color: #a5aaaf;
+  font-size: 16px;
+  margin: 5px 0;
 }
 
 a {
@@ -120,6 +129,36 @@ a {
 
 .summary-units {
   font-size: 18px;
+}
+
+/* =============== FORECAST =============== */
+
+.current-weather {
+  width: auto;
+  height: 100px;
+  margin: 10px auto;
+  padding: 30px;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.forecast-container {
+  max-width: 900px;
+  height: auto;
+  margin: 5px auto;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.07);
+}
+
+.forecast-data {
+  color: #ffffff;
+}
+
+.five-day-forecast {
+  width: auto;
+  height: 300px;
+  margin: 10px auto;
+  padding: 0px;
+  background: rgba(0, 0, 0, 0.2);
 }
 
 /* =============== FOOTER =============== */
