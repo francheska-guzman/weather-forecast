@@ -19,10 +19,6 @@ White 	#ffffff
 
 @import url('https://fonts.googleapis.com/css?family=Pontano+Sans');
 
-* {
-  transition: 1s;
-}
-
 body {
   height: 100%;
   overflow: auto;
@@ -46,27 +42,29 @@ html {
 }
 
 h1 {
-  color: #ffffff;
-  font-size: 35px;
+  background: -webkit-linear-gradient( #ad8401 0, #ffc406 66%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 40px;
 }
 
 h2 {
   color: #ffffff;
   font-size: 25px;
-  margin: 0;
+  margin: 5px;
 }
 
 h3 {
   color: #a5aaaf;
   font-size: 18px;
   text-transform: capitalize;
-  margin: 0;
+  margin: 5px;
 }
 
 h4 {
   color: #ffffff;
   font-size: 50px; 
-  margin: 0;
+  margin: 5px;
 }
 
 .flex {
@@ -107,6 +105,10 @@ h4 {
   background: rgba(0, 0, 0, .2);
 }
 
+.summary-image {
+  width: 120px;
+}
+
 .summary-units {
   font-size: 18px;
 }
@@ -138,15 +140,11 @@ a.footer:hover {
 
 @media only screen and (max-width: 900px) {
 
-* {
-  transition: 1s;
-}
-
 h2 {
-  font-size: 25px;
+  font-size: 20px;
 }
 
-h3 {
+h3, .summary-units {
   font-size: 16px;
 }
 
@@ -168,8 +166,8 @@ h4 {
   padding: 15px 10px;
 }
 
-.summary-units {
-  font-size: 16px;
+.summary-image {
+  width: 100px;
 }
   
 }
@@ -178,8 +176,20 @@ h4 {
 
 @media only screen and (max-width: 580px) {
 
-* {
-  transition: 1s;
+h1 {
+  font-size: 40px;
+}  
+
+h2 {
+  font-size: 25px;
+}
+
+h3, .summary-units {
+  font-size: 17px;
+}
+
+h4 {
+  font-size: 45px; 
 }
   
 .home-summary {
