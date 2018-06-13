@@ -7,8 +7,6 @@ class Home extends Component {
   render() {
     return (
       <div className="home-container"> 
-        <h1>Weather Forecast</h1>
-        {/* Reusing the Summary component to display the summary of each city. */}
         <section className="home-summary">
           <Summary 
             state={this.props.state.first_city}  

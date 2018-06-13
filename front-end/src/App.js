@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Footer from './components/Footer';
+import Header from './components/Header';
 import Home from './components/Home';
 import FullWeatherDescription from './components/FullWeatherDescription';
 import {
@@ -35,11 +36,11 @@ class App extends Component {
   }
 
   componentDidMount() {
-    var call = 'http://api.openweathermap.org/data/2.5/group?id=';
-    var cityId = '5128581,498817,3451190,3675707,292223';
-    var units = "&units=imperial";
-    const apiKey = '&appid=c2a8f705fd5c4cdcab53ed003fbf3927';
-    const url = call + cityId + units + apiKey;
+    var api = 'http://api.openweathermap.org/data/2.5/group?id=';
+    var cities = '5128581,498817,3451190,3675707,292223';
+    var system = "&units=imperial";
+    const key = '&appid=c2a8f705fd5c4cdcab53ed003fbf3927';
+    const url = api + cities + system + key;
 
     // Making one call to the openweathermap API, that get the object of five cities.
     axios.get(url)
@@ -74,6 +75,8 @@ class App extends Component {
     return (
       <Router>
         <div className="app-container">
+          <Route startsWith path="/weather-forecast/" component={() =>
+              (<Header />) }/>
           <Switch>
             <Route path="/weather-forecast/" component={() => 
               (<Home state={this.state} />) }/>
