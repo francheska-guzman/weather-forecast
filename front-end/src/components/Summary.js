@@ -14,8 +14,14 @@ class Summary extends Component {
   constructor(){
     super();
     this.handleWeatherImage = this.handleWeatherImage.bind(this);
+    this.handleWeatherTemperature = this.handleWeatherTemperature.bind(this);
 }
 
+  /* 
+  The handleWeatherImage function shows the image of the current weather condition.
+  I used https://openweathermap.org/weather-conditions to identify each range of numbers with
+  the weather condition.
+  */
   handleWeatherImage() {
     // console.log(this.props.weather.id);
     if (this.props.weather.id >= 200 && this.props.weather.id <= 232) {
@@ -41,6 +47,14 @@ class Summary extends Component {
     }
   }
 
+  // This function prevent from display decimals.
+  handleWeatherTemperature() {
+    var temperature = this.props.main.temp;
+    temperature = Math.round(temperature);
+
+    return <h4>{temperature} <sup className="summary-units">°F</sup></h4>
+  }
+
   render() {
     return (
       <div className="summary-container"> 
@@ -48,7 +62,7 @@ class Summary extends Component {
         <h3>{this.props.weather.description}</h3>
         <div className="flex">
           <section className="row-column">{this.handleWeatherImage()}</section>
-          <section className="row-column"><h4>{this.props.main.temp} <sup className="summary-units">°F</sup></h4></section>
+          <section className="row-column">{this.handleWeatherTemperature()}</section>
         </div>
       </div>
     );
