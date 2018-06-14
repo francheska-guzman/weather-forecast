@@ -21,88 +21,86 @@ class Forecast extends Component {
       day_4: [],
       day_5: []
     }
-    this.getCity = this.getCity.bind(this);
-    this.fiveDayForecastAPI = this.fiveDayForecastAPI.bind(this);
     this.pressure = this.pressure.bind(this);
     this.sunriseSunset = this.sunriseSunset.bind(this);
     this.wind = this.wind.bind(this);
     this.visibility = this.visibility.bind(this);
   }
 
-  componentDidMount() {
-    this.getCity();
-  }
-
-  getCity() {
+  // Grab the selected city through the params.
+  componentWillMount() {
     var city = window.location.href.split("/").pop();
+    // console.log(city); 
+      if (city !== undefined) {
+        city = city.split('+').join(' ');
+        // console.log(city);
 
-    if (city !== undefined) {
-      city = city.split('+').join(' ');
-      // console.log(city);
-      
-      if (city === this.props.state.first_city.name) {
-        this.setState({
-          city: this.props.state.first_city,
-          clouds: this.props.state.first_city_clouds,
-          coord:this.props.state.first_city_coord,
-          main: this.props.state.first_city_main,
-          sys: this.props.state.first_city_sys,
-          weather: this.props.state.first_city_weather,
-          wind: this.props.state.first_city_wind
-        })
+        if (city === this.props.state.first_city.name) {
+          this.setState({
+            city: this.props.state.first_city,
+            clouds: this.props.state.first_city_clouds,
+            coord:this.props.state.first_city_coord,
+            main: this.props.state.first_city_main,
+            sys: this.props.state.first_city_sys,
+            weather: this.props.state.first_city_weather,
+            wind: this.props.state.first_city_wind
+          })
+        }
+        else if (city === this.props.state.second_city.name) {
+          this.setState({
+            city: this.props.state.second_city,
+            clouds: this.props.state.second_city_clouds,
+            coord:this.props.state.second_city_coord,
+            main: this.props.state.second_city_main,
+            sys: this.props.state.second_city_sys,
+            weather: this.props.state.second_city_weather,
+            wind: this.props.state.second_city_wind
+          })
+        }
+        else if (city === this.props.state.third_city.name) {
+          this.setState({
+            city: this.props.state.third_city,
+            clouds: this.props.state.third_city_clouds,
+            coord:this.props.state.third_city_coord,
+            main: this.props.state.third_city_main,
+            sys: this.props.state.third_city_sys,
+            weather: this.props.state.third_city_weather,
+            wind: this.props.state.third_city_wind
+          })
+        }
+        else if (city === this.props.state.fourth_city.name) {
+          this.setState({
+            city: this.props.state.fourth_city,
+            clouds: this.props.state.fourth_city_clouds,
+            coord:this.props.state.fourth_city_coord,
+            main: this.props.state.fourth_city_main,
+            sys: this.props.state.fourth_city_sys,
+            weather: this.props.state.fourth_city_weather,
+            wind: this.props.state.fourth_city_wind
+          })
+        }
+        else {
+          this.setState({
+            city: this.props.state.fifth_city,
+            clouds: this.props.state.fifth_city_clouds,
+            coord:this.props.state.fifth_city_coord,
+            main: this.props.state.fifth_city_main,
+            sys: this.props.state.fifth_city_sys,
+            weather: this.props.state.fifth_city_weather,
+            wind: this.props.state.fifth_city_wind
+          })
+        };
       }
-      else if (city === this.props.state.second_city.name) {
-        this.setState({
-          city: this.props.state.second_city,
-          clouds: this.props.state.second_city_clouds,
-          coord:this.props.state.second_city_coord,
-          main: this.props.state.second_city_main,
-          sys: this.props.state.second_city_sys,
-          weather: this.props.state.second_city_weather,
-          wind: this.props.state.second_city_wind
-        })
-      }
-      else if (city === this.props.state.third_city.name) {
-        this.setState({
-          city: this.props.state.third_city,
-          clouds: this.props.state.third_city_clouds,
-          coord:this.props.state.third_city_coord,
-          main: this.props.state.third_city_main,
-          sys: this.props.state.third_city_sys,
-          weather: this.props.state.third_city_weather,
-          wind: this.props.state.third_city_wind
-        })
-      }
-      else if (city === this.props.state.fourth_city.name) {
-        this.setState({
-          city: this.props.state.fourth_city,
-          clouds: this.props.state.fourth_city_clouds,
-          coord:this.props.state.fourth_city_coord,
-          main: this.props.state.fourth_city_main,
-          sys: this.props.state.fourth_city_sys,
-          weather: this.props.state.fourth_city_weather,
-          wind: this.props.state.fourth_city_wind
-        })
-      }
-      else {
-        this.setState({
-          city: this.props.state.fifth_city,
-          clouds: this.props.state.fifth_city_clouds,
-          coord:this.props.state.fifth_city_coord,
-          main: this.props.state.fifth_city_main,
-          sys: this.props.state.fifth_city_sys,
-          weather: this.props.state.fifth_city_weather,
-          wind: this.props.state.fifth_city_wind
-        })
-      }}
+    // console.log(this.state);
   }
 
-  fiveDayForecastAPI() {
+  componentDidMount() {
+    // console.log(this.state);
+    var days = [];
+
     if (this.state.city.id !== undefined) {
-      // console.log(this.state.city.id);
-      
       var api = 'http://api.openweathermap.org/data/2.5/forecast';
-      var city = "?id=" + this.state.city.id;
+      var cityId = "?id=" + this.state.city.id;
       var system = "&units=imperial";
       /*
       My two API keys in case of any issue are: 
@@ -110,17 +108,30 @@ class Forecast extends Component {
       9fd9021ddf72d859fb5818cd4beee4f9
       */
       const key = '&appid=9fd9021ddf72d859fb5818cd4beee4f9';
-      const url = api + city + system + key;
+      const url = api + cityId + system + key;
 
       fetch(url)
         .then((res) => {
         return res.json();
       }).then(data => {
-
-console.log(data);
-
+        // console.log(data);
+        for(var i = 0; i < data.list.length; i += 1) {
+          // console.log(data.list[i].dt_txt.split(' ')[1]);
+          if(data.list[i].dt_txt.split(' ')[1] === "12:00:00") {
+            days.push(data.list[i]);
+            // console.log(days);
+          }
+        }
+        this.setState({
+          day_1: days[0],
+          day_2: days[1],
+          day_3: days[2],
+          day_4: days[3],
+          day_5: days[4],
+        });
+      // console.log(this.state.day_1);
       }).catch((error) => {
-        console.log(error);
+      console.log(error);
       })
     };
   }
@@ -172,7 +183,6 @@ console.log(data);
   render() {
     return (
       <div className="forecast-container">
-        {this.fiveDayForecastAPI()}
         <section className="five-day-forecast">
           <FiveDays state = {this.state.day_1} />
           <FiveDays state = {this.state.day_2} />
@@ -183,12 +193,12 @@ console.log(data);
           <CurrentCity state={this.state} />
         <div className="current-weather">
           <section className="column-row">
-            <h5>Sunrise: <span className="forecast-data">{this.sunriseSunset(this.sunrise)} <span className="data-type">GMT -0400</span></span></h5>
+            <h5>Sunrise: <span className="forecast-data">{this.sunriseSunset(this.state.sys.sunrise)} <span className="data-type">GMT -0400</span></span></h5>
             <h5>Visibility: <span className="forecast-data">{this.visibility()} <span className="data-type">mi</span></span></h5>
             <h5>Wind: <span className="forecast-data">{this.wind()} <span className="data-type">mph</span></span></h5>
           </section>
           <section className="column-row">
-            <h5>Sunset: <span className="forecast-data">{this.sunriseSunset(this.sunset)} <span className="data-type">GMT -0400</span></span></h5>
+            <h5>Sunset: <span className="forecast-data">{this.sunriseSunset(this.state.sys.sunset)} <span className="data-type">GMT -0400</span></span></h5>
             <h5>Humidity: <span className="forecast-data">{this.state.main.humidity}<span className="data-type">%</span></span></h5>
             <h5>Pressure: <span className="forecast-data">{this.pressure()}<span className="data-type"> inHg</span></span></h5>
           </section>

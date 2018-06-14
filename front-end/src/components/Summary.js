@@ -30,27 +30,27 @@ class Summary extends Component {
 
   /* I used https://openweathermap.org/weather-conditions to identify 
   each range of id with the weather condition. */
-  handleWeatherImage() {
-    // console.log(this.props.id);
-    if (this.props.id >= 200 && this.props.id <= 232) {
+  handleWeatherImage(id) {
+    // console.log(id);
+    if (id >= 200 && id <= 232) {
       return <img className="summary-image" src={thunder} alt="Weather Condition" />
     }
-    else if (this.props.id >= 300 && this.props.id <= 321) {
+    else if (id >= 300 && id <= 321) {
       return <img className="summary-image" src={drizzle} alt="Weather Condition" />
     }
-    else if (this.props.id >= 500 && this.props.id <= 531) {
+    else if (id >= 500 && id <= 531) {
       return <img className="summary-image" src={rain} alt="Weather Condition" />
     }
-    else if (this.props.id >= 600 && this.props.id <= 622) {
+    else if (id >= 600 && id <= 622) {
       return <img className="summary-image" src={snow} alt="Weather Condition" />
     }
-    else if (this.props.id >= 700 && this.props.id <= 781) {
+    else if (id >= 700 && id <= 781) {
       return <img className="summary-image" src={atmosphere} alt="Weather Condition" />
     }
-    else if (this.props.id === 800) {
+    else if (id === 800) {
       return <img className="summary-image" src={clear} alt="Weather Condition" />    
     }
-    else if (this.props.id >= 801 && this.props.id <= 804) {
+    else if (id >= 801 && id <= 804) {
       return <img className="summary-image" src={clouds} alt="Weather Condition" />    
     }
   }
@@ -70,7 +70,7 @@ class Summary extends Component {
           <h2>{this.props.name}</h2>
           <h3>{this.props.weather}</h3>
           <div className="flex">
-            <section className="row-column">{this.handleWeatherImage()}</section>
+            <section className="row-column">{this.handleWeatherImage(this.props.id)}</section>
             <section className="row-column">{this.handleWeatherTemperature(this.props.temp)}</section>
           </div>
         </div>

@@ -56,7 +56,7 @@ class App extends Component {
     }
   }
 
-  componentDidMount() {
+  componentWillMount() {
     var api = 'http://api.openweathermap.org/data/2.5/';
     var cities = 'group?id=5128581,498817,3451190,3675707,4568138';
     var system = "&units=imperial";

@@ -9,10 +9,13 @@ class FiveDays extends Component {
   }
 
   dateFormat() {
+    console.log(this.props.state);
+    
     if (this.props.state.dt_txt !== undefined) {
       var date = this.props.state.dt_txt.split(' ')[0]; 
       var dayOfWeek = new Date(date).getDay();      
 
+      // Show day of the week instead of YYYY-MM-DD format.
       return isNaN(dayOfWeek) ? null : ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'][dayOfWeek];
     }
   }
