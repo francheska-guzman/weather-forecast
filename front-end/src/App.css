@@ -84,8 +84,8 @@ h6 {
   margin: 5px;
 }
 
-a {
-  text-decoration: none;
+li {
+  text-align: left;
 }
 
 .flex {
@@ -107,6 +107,25 @@ a {
 .app-container {
   margin: 80px 50px 10px 50px;
   text-align: center;
+}
+
+/* =============== NAVIGATION =============== */
+
+nav {
+  margin: auto;
+  max-width: 900px;
+}
+
+.navigation-link a {
+  text-decoration: none;
+  font-size: 30px;
+  color: #ffc406;
+}
+
+.navigation-link a:hover {
+  text-decoration: none;
+  font-size: 30px;
+  color: #ad8401;
 }
 
 /* =============== HOME =============== */

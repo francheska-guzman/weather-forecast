@@ -4,13 +4,14 @@ import Forecast from './components/Forecast';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import Home from './components/Home';
+import Navigation from './components/Navigation';
 import {
         BrowserRouter as Router,
         Route,
         Switch
         } from 'react-router-dom';
 
-console.log("%cWelcome to the Weather Forecast.", "color: #ad8401; font-size: 16px");
+console.log("%cWelcome to the Weather Forecast!", "color: #ad8401; font-size: 16px");
 console.log("%cDeveloped by Francheska Guzman.", "color: #0f3150; font-size: 14px");
 
 class App extends Component {
@@ -117,6 +118,8 @@ class App extends Component {
         <div className="app-container">
           <Route startsWith path="/weather-forecast/" component={() =>
               (<Header />) }/>
+          <Route path="/weather-forecast/:city" component={() =>
+              (<Navigation />) }/>
           <Switch>
             <Route exact path="/weather-forecast/" component={() => 
               (<Home state={this.state} />) }/>
