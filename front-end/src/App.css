@@ -104,9 +104,19 @@ li {
 
 /* =============== WEATHER ICONS =============== */
 
-i {
-  font-size: 80px;
-  margin: 10px 0 0 0;
+.weather-icon > i {
+  font-size: 90px;
+  margin: 10px 0;
+}
+
+.five-days-weather-image > i {
+  font-size: 60px;
+  margin: 10px 0 5px 0;
+}
+
+.column-row > i {
+  font-size: 120px;
+  margin: 0;
 }
 
 .wi-thunderstorm {
@@ -176,7 +186,7 @@ nav {
 .summary-container {
   margin: 5px;
   width: 400px;
-  height: 200px;
+  height: auto;
   padding: 25px 10px;
   background: rgba(0, 0, 0, 0.07);
 }

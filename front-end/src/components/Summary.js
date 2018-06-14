@@ -50,7 +50,7 @@ class Summary extends Component {
           <h2>{this.props.name}</h2>
           <h3>{this.props.weather}</h3>
           <div className="flex">
-            <section className="row-column">{this.handleWeatherImage(this.props.id)}</section>
+            <section className="row-column weather-icon">{this.handleWeatherImage(this.props.id)}</section>
             <section className="row-column">{this.handleWeatherTemperature(this.props.temp)}</section>
           </div>
         </div>
