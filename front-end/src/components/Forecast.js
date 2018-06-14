@@ -14,7 +14,12 @@ class Forecast extends Component {
       main: [],
       sys: [],
       weather: [],
-      wind: []
+      wind: [],
+      day_1: [],
+      day_2: [],
+      day_3: [],
+      day_4: [],
+      day_5: []
     }
     this.getCity = this.getCity.bind(this);
     this.pressure = this.pressure.bind(this);
@@ -88,8 +93,28 @@ class Forecast extends Component {
           weather: this.props.state.fifth_city_weather,
           wind: this.props.state.fifth_city_wind
         })
-      }
-    }
+      }}
+  }
+
+  fiveDayForecast() {
+    if (this.state.city.id !== undefined) {
+      // console.log(this.state.city.id);
+      
+      var api = 'http://api.openweathermap.org/data/2.5/forecast';
+      var city = "?id=" + this.state.city.id;
+      var system = "&units=imperial";
+      const key = '&appid=c2a8f705fd5c4cdcab53ed003fbf3927';
+      const url = api + city + system + key;
+
+      fetch(url)
+        .then((res) => {
+        return res.json();
+      }).then(data => {
+        console.log(data);
+      }).catch((error) => {
+        console.log(error);
+      })
+    };
   }
 
   pressure() {
@@ -147,6 +172,7 @@ class Forecast extends Component {
   render() {
     return (
       <div className="forecast-container">
+        {this.fiveDayForecast()}
         <section className="five-day-forecast">
           <FiveDays day_1={this.state} />
           <FiveDays day_2={this.state} />
@@ -159,12 +185,12 @@ class Forecast extends Component {
           />
         <div className="current-weather">
           <section className="column-row">
-            <h5>Sunrise: <span className="forecast-data">{this.sunrise()} <span className="data-type">GMT -4000</span></span></h5>
+            <h5>Sunrise: <span className="forecast-data">{this.sunrise()} <span className="data-type">GMT -0400</span></span></h5>
             <h5>Visibility: <span className="forecast-data">{this.visibility()} <span className="data-type">mi</span></span></h5>
             <h5>Wind: <span className="forecast-data">{this.wind()} <span className="data-type">mph</span></span></h5>
           </section>
           <section className="column-row">
-            <h5>Sunset: <span className="forecast-data">{this.sunset()} <span className="data-type">GMT -4000</span></span></h5>
+            <h5>Sunset: <span className="forecast-data">{this.sunset()} <span className="data-type">GMT -0400</span></span></h5>
             <h5>Humidity: <span className="forecast-data">{this.state.main.humidity}<span className="data-type">%</span></span></h5>
             <h5>Pressure: <span className="forecast-data">{this.pressure()}<span className="data-type"> inHg</span></span></h5>
           </section>
