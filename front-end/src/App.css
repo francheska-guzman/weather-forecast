@@ -78,7 +78,7 @@ h5 {
 }
 
 h6 {
-  font-size: 16px;
+  font-size: 17px;
   color: #ffc406;
   display: inline;
   margin: 5px;
@@ -234,14 +234,36 @@ nav {
   margin: 50px 0;
 }
 
+.five-days-container > h3 {
+  font-size: 14px;
+  margin: 10px 0 20px 0;
+}
+
 .five-days-container > h5 {
   text-align: center;
-  margin: 0 0 20px 0;
+  font-size: 22px;
+  color: #ffffff;
 }
 
 .five-days-weather-image img {
-  width: 100px;
-  height: auto;
+  width: auto;
+  height: 100px;
+}
+
+.five-data > h4 {
+  font-size: 40px;
+}
+
+.five-data > h5 {
+  font-size: 16px;
+}
+
+.five-data {
+  margin: 15px 20px 0 20px;
+}
+
+.five-data-continue {
+  margin: 20px 0 10px 0;
 }
 
 /* =============== FOOTER =============== */
@@ -305,6 +327,14 @@ h4 {
   width: 100px;
 }
 
+.five-days-container {
+  margin: 20px 0;
+}
+
+.five-data {
+  padding: 0 30%;
+}
+
 .five-day-forecast {
   flex-direction: column;
 }
@@ -354,6 +384,10 @@ h4 {
 
 .current-weather {
   flex-direction: column;
+}
+
+.five-data {
+  padding: 0 10%;
 }
 
 }

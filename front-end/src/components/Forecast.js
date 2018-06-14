@@ -176,8 +176,8 @@ class Forecast extends Component {
     };
   }
 
-  pressure() {
-    var pressure = this.state.main.pressure;
+  pressure(value) {
+    var pressure = value;
 
     // Convert pressure from hPa to inHg.
     if(isNaN(pressure) === false) {
@@ -196,8 +196,8 @@ class Forecast extends Component {
     return time;
   }
 
-  wind() {
-    var wind = this.state.wind.speed;
+  wind(value) {
+    var wind = value;
 
     if(isNaN(wind) === false) {
       // Convert meters per second to miles per hour.
@@ -209,8 +209,8 @@ class Forecast extends Component {
     }
   }
 
-  visibility() {
-    var visibility = this.state.city.visibility;
+  visibility(value) {
+    var visibility = value;
 
     if(isNaN(visibility) === false) {
       visibility = visibility * 0.0006213712;
@@ -253,13 +253,13 @@ class Forecast extends Component {
         <div className="current-weather">
           <section className="column-row">
             <h5>Sunrise: <span className="forecast-data">{this.sunriseSunset(this.state.sys.sunrise)} <span className="data-type">GMT -0400</span></span></h5>
-            <h5>Visibility: <span className="forecast-data">{this.visibility()} <span className="data-type">mi</span></span></h5>
-            <h5>Wind: <span className="forecast-data">{this.wind()} <span className="data-type">mph</span></span></h5>
+            <h5>Visibility: <span className="forecast-data">{this.visibility(this.state.city.visibility)} <span className="data-type">mi</span></span></h5>
+            <h5>Wind: <span className="forecast-data">{this.wind(this.state.wind.speed)} <span className="data-type">mph</span></span></h5>
           </section>
           <section className="column-row">
             <h5>Sunset: <span className="forecast-data">{this.sunriseSunset(this.state.sys.sunset)} <span className="data-type">GMT -0400</span></span></h5>
             <h5>Humidity: <span className="forecast-data">{this.state.main.humidity}<span className="data-type">%</span></span></h5>
-            <h5>Pressure: <span className="forecast-data">{this.pressure()}<span className="data-type"> inHg</span></span></h5>
+            <h5>Pressure: <span className="forecast-data">{this.pressure(this.state.main.pressure)}<span className="data-type"> inHg</span></span></h5>
           </section>
         </div>
       </div>
