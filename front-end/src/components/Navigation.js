@@ -6,9 +6,10 @@ import { NavLink } from 'react-router-dom';
 class Navigation extends Component {
   render() {
     return (
-        <nav>
-          <li className="navigation-link"><NavLink to="/weather-forecast">⬅</NavLink></li>
-        </nav>
+      <nav>
+        <li className="navigation-link">
+        <NavLink to="/weather-forecast">⬅</NavLink></li>
+      </nav>
     );
   }
 }

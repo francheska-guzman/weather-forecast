@@ -5,7 +5,9 @@ import React, { Component } from 'react';
 class Header extends Component {
   render() {
     return (
-      <header><h1>Weather Forecast</h1></header>
+      <header>
+        <h1>Weather Forecast</h1>
+      </header>
     );
   }
 }

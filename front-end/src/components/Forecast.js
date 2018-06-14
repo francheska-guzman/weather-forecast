@@ -22,14 +22,16 @@ class Forecast extends Component {
       day_5: []
     }
     this.getCity = this.getCity.bind(this);
+    this.fiveDayForecastAPI = this.fiveDayForecastAPI.bind(this);
     this.pressure = this.pressure.bind(this);
-    this.sunrise = this.sunrise.bind(this);
-    this.sunset = this.sunset.bind(this);
+    this.sunriseSunset = this.sunriseSunset.bind(this);
+    this.wind = this.wind.bind(this);
     this.visibility = this.visibility.bind(this);
   }
 
   componentDidMount() {
     this.getCity();
+    this.fiveDayForecastAPI();
   }
 
   getCity() {
@@ -96,7 +98,7 @@ class Forecast extends Component {
       }}
   }
 
-  fiveDayForecast() {
+  fiveDayForecastAPI() {
     if (this.state.city.id !== undefined) {
       // console.log(this.state.city.id);
       
@@ -129,16 +131,8 @@ class Forecast extends Component {
     }
   }
 
-  sunrise() {
-    var seconds = this.state.sys.sunrise;
-    var date = new Date(seconds * 1000);
-    var time = date.toLocaleTimeString();
-    
-    return time;
-  }
-
-  sunset() {
-    var seconds = this.state.sys.sunset;
+  sunriseSunset(value) {
+    var seconds = value;
     var date = new Date(seconds * 1000);
     var time = date.toLocaleTimeString();
     
@@ -172,25 +166,22 @@ class Forecast extends Component {
   render() {
     return (
       <div className="forecast-container">
-        {this.fiveDayForecast()}
         <section className="five-day-forecast">
-          <FiveDays day_1={this.state} />
-          <FiveDays day_2={this.state} />
-          <FiveDays day_3={this.state} />
-          <FiveDays day_4={this.state} />
-          <FiveDays day_5={this.state} />
+          <FiveDays day = {this.state.day_1} />
+          <FiveDays day = {this.state.day_2} />
+          <FiveDays day = {this.state.day_3} />
+          <FiveDays day = {this.state.day_4} />
+          <FiveDays day = {this.state.day_5} />
         </section>
-          <CurrentCity 
-            state={this.state} 
-          />
+          <CurrentCity state={this.state} />
         <div className="current-weather">
           <section className="column-row">
-            <h5>Sunrise: <span className="forecast-data">{this.sunrise()} <span className="data-type">GMT -0400</span></span></h5>
+            <h5>Sunrise: <span className="forecast-data">{this.sunriseSunset(this.sunrise)} <span className="data-type">GMT -0400</span></span></h5>
             <h5>Visibility: <span className="forecast-data">{this.visibility()} <span className="data-type">mi</span></span></h5>
             <h5>Wind: <span className="forecast-data">{this.wind()} <span className="data-type">mph</span></span></h5>
           </section>
           <section className="column-row">
-            <h5>Sunset: <span className="forecast-data">{this.sunset()} <span className="data-type">GMT -0400</span></span></h5>
+            <h5>Sunset: <span className="forecast-data">{this.sunriseSunset(this.sunset)} <span className="data-type">GMT -0400</span></span></h5>
             <h5>Humidity: <span className="forecast-data">{this.state.main.humidity}<span className="data-type">%</span></span></h5>
             <h5>Pressure: <span className="forecast-data">{this.pressure()}<span className="data-type"> inHg</span></span></h5>
           </section>

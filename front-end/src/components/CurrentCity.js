@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// Weather condition images
 import atmosphere from "../weather-conditions/atmosphere.png";
 import clear from "../weather-conditions/clear.png";
 import clouds from "../weather-conditions/clouds.png";
@@ -13,26 +12,11 @@ import thunder from "../weather-conditions/thunder.png";
 class CurrentCity extends Component {
   constructor(){
     super();
-    this.handleParams = this.handleParams.bind(this);
     this.handleWeatherImage = this.handleWeatherImage.bind(this);
-    this.handleWeatherTemperature = this.handleWeatherTemperature.bind(this);
+    this.changeToInteger = this.changeToInteger.bind(this);
 }
 
-  handleParams() {
-    var city = this.props.name;
-    
-    if (city !== undefined) {
-      city = city.replace(/ /g, '+');
-      return city;
-    }
-  }
-
-  /* 
-  Render an image of the current weather condition. I used https://openweathermap.org/weather-conditions 
-  to identify each range of numbers with the weather condition.
-  */
   handleWeatherImage() {
-    // console.log(this.props.weather.id);
     if (this.props.state.weather.id >= 200 && this.props.state.weather.id <= 232) {
       return <img className="summary-image" src={thunder} alt="Weather Condition" />
     }
@@ -56,12 +40,11 @@ class CurrentCity extends Component {
     }
   }
 
-  // This function prevent from display decimals.
-  handleWeatherTemperature(temperature) {
-    temperature = Math.round(temperature);
+  changeToInteger(value) {
+    var integer = Math.round(value);
 
-    if(isNaN(temperature) === false) {
-      return (temperature)
+    if(isNaN(integer) === false) {
+      return (integer);
     }
   }
 
@@ -73,10 +56,10 @@ class CurrentCity extends Component {
         <div className="flex">
           <section className="column-row">{this.handleWeatherImage()}</section>
           <section className="column-row">
-            <h4>{this.handleWeatherTemperature(this.props.state.main.temp)}<sup className="summary-units"> °F</sup></h4>
-            <h6>Min: {this.handleWeatherTemperature(this.props.state.main.temp_min)}<sup> °F</sup></h6>
-            <h6>Max: {this.handleWeatherTemperature(this.props.state.main.temp_max)}<sup> °F</sup></h6>
-        </section>
+            <h4>{this.changeToInteger(this.props.state.main.temp)}<sup className="summary-units"> °F</sup></h4>
+            <h6>Min: {this.changeToInteger(this.props.state.main.temp_min)}<sup> °F</sup></h6>
+            <h6>Max: {this.changeToInteger(this.props.state.main.temp_max)}<sup> °F</sup></h6>
+          </section>
         </div>
       </div>
     );
