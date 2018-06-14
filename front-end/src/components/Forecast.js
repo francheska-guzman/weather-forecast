@@ -16,10 +16,30 @@ class Forecast extends Component {
       weather: [],
       wind: [],
       day_1: [],
+      day_1_clouds: [], 
+      day_1_main: [],
+      day_1_weather: [],
+      day_1_wind: [],
       day_2: [],
+      day_2_clouds: [], 
+      day_2_main: [],
+      day_2_weather: [],
+      day_2_wind: [],
       day_3: [],
+      day_3_clouds: [], 
+      day_3_main: [],
+      day_3_weather: [],
+      day_3_wind: [],
       day_4: [],
-      day_5: []
+      day_4_clouds: [], 
+      day_4_main: [],
+      day_4_weather: [],
+      day_4_wind: [],
+      day_5: [],
+      day_5_clouds: [], 
+      day_5_main: [],
+      day_5_weather: [],
+      day_5_wind: []
     }
     this.pressure = this.pressure.bind(this);
     this.sunriseSunset = this.sunriseSunset.bind(this);
@@ -124,12 +144,32 @@ class Forecast extends Component {
         }
         this.setState({
           day_1: days[0],
+          day_1_clouds: days[0].clouds, 
+          day_1_main: days[0].main,
+          day_1_weather: days[0].weather[0],
+          day_1_wind: days[0].wind,
           day_2: days[1],
+          day_2_clouds: days[1].clouds, 
+          day_2_main: days[1].main,
+          day_2_weather: days[1].weather[0],
+          day_2_wind: days[1].wind,
           day_3: days[2],
+          day_3_clouds: days[2].clouds, 
+          day_3_main: days[2].main,
+          day_3_weather: days[2].weather[0],
+          day_3_wind: days[2].wind,
           day_4: days[3],
+          day_4_clouds: days[3].clouds, 
+          day_4_main: days[3].main,
+          day_4_weather: days[3].weather[0],
+          day_4_wind: days[3].wind,
           day_5: days[4],
+          day_5_clouds: days[4].clouds, 
+          day_5_main: days[4].main,
+          day_5_weather: days[4].weather[0],
+          day_5_wind: days[4].wind
         });
-      // console.log(this.state.day_1);
+        console.log(this.state.day_1);
       }).catch((error) => {
       console.log(error);
       })
@@ -184,11 +224,30 @@ class Forecast extends Component {
     return (
       <div className="forecast-container">
         <section className="five-day-forecast">
-          <FiveDays state = {this.state.day_1} />
-          <FiveDays state = {this.state.day_2} />
-          <FiveDays state = {this.state.day_3} />
-          <FiveDays state = {this.state.day_4} />
-          <FiveDays state = {this.state.day_5} />
+          <FiveDays 
+            tomorrow = {this.state.day_2}
+            clouds = {this.state.day_2_clouds}
+            main = {this.state.day_2_main}
+            weather = {this.state.day_2_weather}
+            wind = {this.state.day_2_wind} />
+          <FiveDays 
+            state = {this.state.day_3}
+            clouds = {this.state.day_3_clouds}
+            main = {this.state.day_3_main}
+            weather = {this.state.day_3_weather}
+            wind = {this.state.day_3_wind} />
+          <FiveDays 
+            state = {this.state.day_4}
+            clouds = {this.state.day_4_clouds}
+            main = {this.state.day_4_main}
+            weather = {this.state.day_4_weather}
+            wind = {this.state.day_4_wind} />
+          <FiveDays 
+            state = {this.state.day_5}
+            clouds = {this.state.day_5_clouds}
+            main = {this.state.day_5_main}
+            weather = {this.state.day_5_weather}
+            wind = {this.state.day_5_wind} />
         </section>
           <CurrentCity state={this.state} />
         <div className="current-weather">
