@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import '../weather-icons.min.css';
+import '../weather-icons/weather-icons.min.css';
 
 // console.log("Summary is working.");
 

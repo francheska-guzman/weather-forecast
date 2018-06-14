@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../weather-icons.min.css';
+import '../weather-icons/weather-icons.min.css';
 
 // console.log("CurrentCity is working.");
 
