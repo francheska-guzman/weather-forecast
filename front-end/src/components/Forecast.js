@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import CurrentCity from './CurrentCity';
-import FiveDays from './FiveDays';
+import ForecastSummary from './ForecastSummary';
+import ForecastNextDays from './ForecastNextDays';
 
 // console.log("Forecast is working.");
 
@@ -224,32 +224,32 @@ class Forecast extends Component {
     return (
       <div className="forecast-container">
         <section className="five-day-forecast">
-          <FiveDays 
+          <ForecastNextDays 
             tomorrow = {this.state.day_2}
             clouds = {this.state.day_2_clouds}
             main = {this.state.day_2_main}
             weather = {this.state.day_2_weather}
             wind = {this.state.day_2_wind} />
-          <FiveDays 
+          <ForecastNextDays 
             state = {this.state.day_3}
             clouds = {this.state.day_3_clouds}
             main = {this.state.day_3_main}
             weather = {this.state.day_3_weather}
             wind = {this.state.day_3_wind} />
-          <FiveDays 
+          <ForecastNextDays 
             state = {this.state.day_4}
             clouds = {this.state.day_4_clouds}
             main = {this.state.day_4_main}
             weather = {this.state.day_4_weather}
             wind = {this.state.day_4_wind} />
-          <FiveDays 
+          <ForecastNextDays 
             state = {this.state.day_5}
             clouds = {this.state.day_5_clouds}
             main = {this.state.day_5_main}
             weather = {this.state.day_5_weather}
             wind = {this.state.day_5_wind} />
         </section>
-          <CurrentCity state={this.state} />
+          <ForecastSummary state={this.state} />
         <div className="current-weather">
           <section className="column-row">
             <h5>Sunrise: <span className="forecast-data">{this.sunriseSunset(this.state.sys.sunrise)} <span className="data-type">GMT -0400</span></span></h5>

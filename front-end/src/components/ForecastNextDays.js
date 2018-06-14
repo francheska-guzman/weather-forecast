@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import '../weather-icons/weather-icons.min.css';
 
-// console.log("FiveDays is working.");
-
-class FiveDays extends Component {
+class ForecastNextDays extends Component {
   constructor(){
     super();
     this.changeToInteger = this.changeToInteger.bind(this);
@@ -93,4 +91,4 @@ class FiveDays extends Component {
   }
 }
 
-export default FiveDays;
+export default ForecastNextDays;

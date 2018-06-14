@@ -16,7 +16,7 @@ Yellow  #ffc406, #ad8401
 
 */
 
-/* =============== GLOBAL =============== */
+/* =============== General =============== */
 
 @import url('https://fonts.googleapis.com/css?family=Encode+Sans+Semi+Expanded|Pontano+Sans');
 
@@ -102,7 +102,7 @@ li {
   flex-direction: row;
 }
 
-/* =============== WEATHER ICONS =============== */
+/* =============== Weather Icons =============== */
 
 .weather-icon > i {
   font-size: 90px;
@@ -147,14 +147,14 @@ li {
   color: #ffc406;
 }
 
-/* =============== APP =============== */
+/* =============== App =============== */
 
 .app-container {
   margin: 80px 50px 10px 50px;
   text-align: center;
 }
 
-/* =============== NAVIGATION =============== */
+/* =============== Navigation =============== */
 
 nav {
   margin: auto;
@@ -173,7 +173,7 @@ nav {
   color: #ad8401;
 }
 
-/* =============== HOME =============== */
+/* =============== Home =============== */
 
 .home-summary {
   display: flex;
@@ -181,7 +181,7 @@ nav {
   justify-content: center;
 }
 
-/* =============== SUMMARY =============== */
+/* =============== HomeSummary =============== */
 
 .summary-container {
   margin: 5px;
@@ -213,7 +213,7 @@ nav {
   font-size: 18px;
 }
 
-/* =============== FORECAST =============== */
+/* =============== Forecast =============== */
 
 .current-weather {
   display: flex;
@@ -255,7 +255,7 @@ nav {
   height: auto;
 }
 
-/* =============== CURRENTCITY =============== */
+/* =============== ForecastSummary =============== */
 
 .current-city {
   height: auto;
@@ -267,7 +267,7 @@ nav {
   font-size: 14px;
 }
 
-/* =============== FIVEDAYS =============== */
+/* =============== ForecastNextDays =============== */
 
 .five-days-container {
   flex: 1;
@@ -307,7 +307,7 @@ nav {
   margin: 20px 0 10px 0;
 }
 
-/* =============== FOOTER =============== */
+/* =============== Footer =============== */
 
 footer {
 	width: 100%;
@@ -330,13 +330,13 @@ a.footer:hover {
 	color: #bac0c6;
 }
 
-/* =============== PAGENOTFOUND =============== */
+/* =============== PageNotFound =============== */
 
 .page-not-found-container {
   margin: 20% auto;
 }
 
-/* =============== TABLET =============== */
+/* =============== For Tablet =============== */
 
 @media only screen and (max-width: 900px) {
 
@@ -384,7 +384,7 @@ h4 {
 
 }
 
-/* =============== MOBILE =============== */
+/* =============== For Mobile =============== */
 
 @media only screen and (max-width: 580px) {
 

@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import '../weather-icons/weather-icons.min.css';
 
-// console.log("Summary is working.");
+// console.log("HomeSummary is working.");
 
-class Summary extends Component {
+class HomeSummary extends Component {
   constructor(){
     super();
     this.handleParams = this.handleParams.bind(this);
@@ -59,4 +59,4 @@ class Summary extends Component {
   }
 }
 
-export default Summary;
+export default HomeSummary;

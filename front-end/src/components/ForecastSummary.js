@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import '../weather-icons/weather-icons.min.css';
 
-// console.log("CurrentCity is working.");
-
-class CurrentCity extends Component {
+class ForecastSummary extends Component {
   constructor(){
     super();
     this.handleWeatherImage = this.handleWeatherImage.bind(this);
@@ -49,4 +47,4 @@ handleWeatherImage(id) {
   }
 }
 
-export default CurrentCity;
+export default ForecastSummary;
