@@ -31,7 +31,6 @@ class Forecast extends Component {
 
   componentDidMount() {
     this.getCity();
-    this.fiveDayForecastAPI();
   }
 
   getCity() {
@@ -105,14 +104,21 @@ class Forecast extends Component {
       var api = 'http://api.openweathermap.org/data/2.5/forecast';
       var city = "?id=" + this.state.city.id;
       var system = "&units=imperial";
-      const key = '&appid=c2a8f705fd5c4cdcab53ed003fbf3927';
+      /*
+      My two API keys in case of any issue are: 
+      c2a8f705fd5c4cdcab53ed003fbf3927
+      9fd9021ddf72d859fb5818cd4beee4f9
+      */
+      const key = '&appid=9fd9021ddf72d859fb5818cd4beee4f9';
       const url = api + city + system + key;
 
       fetch(url)
         .then((res) => {
         return res.json();
       }).then(data => {
-        console.log(data);
+
+console.log(data);
+
       }).catch((error) => {
         console.log(error);
       })
@@ -166,12 +172,13 @@ class Forecast extends Component {
   render() {
     return (
       <div className="forecast-container">
+        {this.fiveDayForecastAPI()}
         <section className="five-day-forecast">
-          <FiveDays day = {this.state.day_1} />
-          <FiveDays day = {this.state.day_2} />
-          <FiveDays day = {this.state.day_3} />
-          <FiveDays day = {this.state.day_4} />
-          <FiveDays day = {this.state.day_5} />
+          <FiveDays state = {this.state.day_1} />
+          <FiveDays state = {this.state.day_2} />
+          <FiveDays state = {this.state.day_3} />
+          <FiveDays state = {this.state.day_4} />
+          <FiveDays state = {this.state.day_5} />
         </section>
           <CurrentCity state={this.state} />
         <div className="current-weather">

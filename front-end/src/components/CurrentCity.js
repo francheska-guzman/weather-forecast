@@ -51,6 +51,7 @@ class CurrentCity extends Component {
   render() {
     return (
       <div className="current-city"> 
+        <h5>Weather for today in</h5>
         <h2>{this.props.state.city.name}</h2>
         <h3>{this.props.state.weather.description}</h3>
         <div className="flex">

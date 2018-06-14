@@ -60,7 +60,12 @@ class App extends Component {
     var api = 'http://api.openweathermap.org/data/2.5/';
     var cities = 'group?id=5128581,498817,3451190,3675707,4568138';
     var system = "&units=imperial";
-    const key = '&appid=c2a8f705fd5c4cdcab53ed003fbf3927';
+    /*
+    My two API keys in case of any issue are: 
+    c2a8f705fd5c4cdcab53ed003fbf3927
+    9fd9021ddf72d859fb5818cd4beee4f9
+    */
+    const key = '&appid=9fd9021ddf72d859fb5818cd4beee4f9';
     const url = api + cities + system + key;
 
     // Making a call to the openweathermap API, that get the object of five cities.
