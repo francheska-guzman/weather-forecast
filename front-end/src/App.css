@@ -9,7 +9,7 @@ Francheska Guzman
 COLOR GUIDE
 
 Black		#000000
-Blue 		#0f3150
+Blue 		#45658e, #0f3150
 Grey		#bac0c6, #a5aaaf, #787f87
 White 	#ffffff
 Yellow  #ffc406, #ad8401
@@ -102,6 +102,41 @@ li {
   flex-direction: row;
 }
 
+/* =============== WEATHER ICONS =============== */
+
+i {
+  font-size: 80px;
+  margin: 10px 0 0 0;
+}
+
+.wi-thunderstorm {
+  color: #ad8401;
+}
+
+.wi-sleet {
+  color: #a5aaaf;
+}
+
+.wi-showers {
+  color: #787f87;
+}
+
+.wi-snow {
+  color: #ffffff;
+}
+
+.wi-fog {
+  color: #bac0c6;
+}
+
+.wi-cloudy {
+  color: #45658e;
+}
+
+.wi-day-cloudy {
+  color: #ffc406;
+}
+
 /* =============== APP =============== */
 
 .app-container {
@@ -157,10 +192,6 @@ nav {
   height: 200px;
   padding: 25px 10px;
   background: rgba(0, 0, 0, 0.07);
-}
-
-.summary-image {
-  width: 120px;
 }
 
 .summary-link {
@@ -289,7 +320,13 @@ a.footer:hover {
 	color: #bac0c6;
 }
 
-/* =============== RESPONSIVE DESIGN FOR TABLET =============== */
+/* =============== PAGENOTFOUND =============== */
+
+.page-not-found-container {
+  margin: 20% auto;
+}
+
+/* =============== TABLET =============== */
 
 @media only screen and (max-width: 900px) {
 
@@ -323,10 +360,6 @@ h4 {
   padding: 15px 10px;
 }
 
-.summary-image {
-  width: 100px;
-}
-
 .five-days-container {
   margin: 20px 0;
 }
@@ -341,7 +374,7 @@ h4 {
 
 }
 
-/* =============== RESPONSIVE DESIGN FOR MOBILE =============== */
+/* =============== MOBILE =============== */
 
 @media only screen and (max-width: 580px) {
 
@@ -388,6 +421,13 @@ h4 {
 
 .five-data {
   padding: 0 10%;
+}
+
+.forecast-container {
+  max-width: auto;
+  height: auto;
+  margin: auto;
+  padding: 0px;
 }
 
 }

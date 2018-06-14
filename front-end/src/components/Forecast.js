@@ -169,7 +169,7 @@ class Forecast extends Component {
           day_5_weather: days[4].weather[0],
           day_5_wind: days[4].wind
         });
-        console.log(this.state.day_1);
+        // console.log(this.state.day_1);
       }).catch((error) => {
       console.log(error);
       })

@@ -4,6 +4,7 @@ import Forecast from './components/Forecast';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import Home from './components/Home';
+import PageNotFound from './components/PageNotFound';
 import Navigation from './components/Navigation';
 import {
         BrowserRouter as Router,
@@ -137,9 +138,11 @@ class App extends Component {
               (<Navigation />) }/>
           <Switch>
             <Route exact path="/weather-forecast/" component={() => 
-              (<Home state={this.state} />) }/>
+                (<Home state={this.state} />) }/>
             <Route path="/weather-forecast/:city" component={() => 
-              (<Forecast state={this.state} />) }/>
+                (<Forecast state={this.state} />) }/>
+            <Route path="/weather-forecast/*" component={() => 
+                (<PageNotFound />) }/>
           </Switch>
           <Route startsWith path="/weather-forecast/" component={() =>
               (<Footer />) }/>

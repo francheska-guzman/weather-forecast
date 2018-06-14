@@ -1,12 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import atmosphere from "../weather-conditions/atmosphere.png";
-import clear from "../weather-conditions/clear.png";
-import clouds from "../weather-conditions/clouds.png";
-import drizzle from "../weather-conditions/drizzle.png";
-import rain from "../weather-conditions/rain.png";
-import snow from "../weather-conditions/snow.png";
-import thunder from "../weather-conditions/thunder.png";
+import '../weather-icons.min.css';
 
 // console.log("Summary is working.");
 
@@ -32,27 +26,13 @@ class Summary extends Component {
   each range of id with the weather condition. */
   handleWeatherImage(id) {
     // console.log(id);
-    if (id >= 200 && id <= 232) {
-      return <img className="summary-image" src={thunder} alt="Weather Condition" />
-    }
-    else if (id >= 300 && id <= 321) {
-      return <img className="summary-image" src={drizzle} alt="Weather Condition" />
-    }
-    else if (id >= 500 && id <= 531) {
-      return <img className="summary-image" src={rain} alt="Weather Condition" />
-    }
-    else if (id >= 600 && id <= 622) {
-      return <img className="summary-image" src={snow} alt="Weather Condition" />
-    }
-    else if (id >= 700 && id <= 781) {
-      return <img className="summary-image" src={atmosphere} alt="Weather Condition" />
-    }
-    else if (id === 800) {
-      return <img className="summary-image" src={clear} alt="Weather Condition" />    
-    }
-    else if (id >= 801 && id <= 804) {
-      return <img className="summary-image" src={clouds} alt="Weather Condition" />    
-    }
+    if (id >= 200 && id <= 232) { return <i class="wi wi-thunderstorm"></i> }
+    else if (id >= 300 && id <= 321) { return <i class="wi wi-sleet"></i> }
+    else if (id >= 500 && id <= 531) { return <i class="wi wi-showers"></i> }
+    else if (id >= 600 && id <= 622) { return <i class="wi wi-snow"></i> }
+    else if (id >= 700 && id <= 781) { return <i class="wi wi-fog"></i> }
+    else if (id === 800) { return <i class="wi wi-cloudy"></i> }
+    else if (id >= 801 && id <= 804) { return <i class="wi wi-day-cloudy"></i> }
   }
 
   handleWeatherTemperature(value) {
