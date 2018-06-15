@@ -30,9 +30,9 @@ I used the following API endpoints from the OpenWeatherMap:
 
 ![Mobile](./examples/mobile.png)
 
-### iPad
+### Tablet
 
-![iPad](./examples/ipad.png)
+![tablet](./examples/tablet.png)
 
 ### Computer
 
