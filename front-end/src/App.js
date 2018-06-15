@@ -131,10 +131,10 @@ class App extends Component {
           <Switch>
             <Route exact path="/weather-forecast/" component={() => 
                 (<Home state={this.state} />) }/>
+            <Route path="/weather-forecast/Page404" component={() => 
+                (<PageNotFound />) }/>
             <Route path="/weather-forecast/:city" component={() => 
                 (<Forecast state={this.state} />) }/>
-            <Route path="/weather-forecast/*" component={() => 
-                (<PageNotFound />) }/>
           </Switch>
           <Route startsWith path="/weather-forecast/" component={() =>
               (<Footer />) }/>

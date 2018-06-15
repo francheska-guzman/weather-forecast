@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ForecastSummary from './ForecastSummary';
 import ForecastNextDays from './ForecastNextDays';
 
+
 // console.log("Forecast is working.");
 
 class Forecast extends Component {
@@ -99,7 +100,7 @@ class Forecast extends Component {
             wind: this.props.state.fourth_city_wind
           })
         }
-        else {
+        else if (city === this.props.state.fifth_city.name) {
           this.setState({
             city: this.props.state.fifth_city,
             clouds: this.props.state.fifth_city_clouds,
@@ -109,7 +110,10 @@ class Forecast extends Component {
             weather: this.props.state.fifth_city_weather,
             wind: this.props.state.fifth_city_wind
           })
-        };
+        }
+        else {
+            window.location.href = "/weather-forecast/Page404";
+        }
       }
     // console.log(this.state);
   }

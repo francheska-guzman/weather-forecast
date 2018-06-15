@@ -30,20 +30,20 @@ class ForecastNextDays extends Component {
       // console.log(this.props)
 
       // Show day of the week instead of YYYY-MM-DD format.
-      return isNaN(dayOfWeek) ? null : ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'][dayOfWeek];
+      return isNaN(dayOfWeek) ? null : ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"][dayOfWeek];
     }
   }
 
-handleWeatherImage(id) {
-  // console.log(id);
-  if (id >= 200 && id <= 232) { return <i className="wi wi-thunderstorm"></i> }
-  else if (id >= 300 && id <= 321) { return <i className="wi wi-sleet"></i> }
-  else if (id >= 500 && id <= 531) { return <i className="wi wi-showers"></i> }
-  else if (id >= 600 && id <= 622) { return <i className="wi wi-snow"></i> }
-  else if (id >= 700 && id <= 781) { return <i className="wi wi-fog"></i> }
-  else if (id === 800) { return <i className="wi wi-cloudy"></i> }
-  else if (id >= 801 && id <= 804) { return <i className="wi wi-day-cloudy"></i> }
-}
+  handleWeatherImage(id) {
+    // console.log(id);
+    if (id >= 200 && id <= 232) { return <i className="wi wi-thunderstorm"></i> }
+    else if (id >= 300 && id <= 321) { return <i className="wi wi-sleet"></i> }
+    else if (id >= 500 && id <= 531) { return <i className="wi wi-showers"></i> }
+    else if (id >= 600 && id <= 622) { return <i className="wi wi-snow"></i> }
+    else if (id >= 700 && id <= 781) { return <i className="wi wi-fog"></i> }
+    else if (id === 800) { return <i className="wi wi-cloudy"></i> }
+    else if (id >= 801 && id <= 804) { return <i className="wi wi-day-cloudy"></i> }
+  }
 
   wind(value) {
     var wind = value;
