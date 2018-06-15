@@ -15,8 +15,8 @@ handleWeatherImage(id) {
   else if (id >= 500 && id <= 531) { return <i className="wi wi-showers"></i> }
   else if (id >= 600 && id <= 622) { return <i className="wi wi-snow"></i> }
   else if (id >= 700 && id <= 781) { return <i className="wi wi-fog"></i> }
-  else if (id === 800) { return <i className="wi wi-cloudy"></i> }
-  else if (id >= 801 && id <= 804) { return <i className="wi wi-day-cloudy"></i> }
+  else if (id === 800) { return <i className="wi wi-day-cloudy"></i> }
+  else if (id >= 801 && id <= 804) { return <i className="wi wi-cloudy"></i> }
 }
 
   changeToInteger(value) {
