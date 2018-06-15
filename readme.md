@@ -1,6 +1,6 @@
 # Weather Forecast
 
-Agency Within <b>|</b> Front End Web Developer Test
+Agency Within <b>|</b> Front End Developer Test
 
 Francheska Guzman
 
@@ -21,11 +21,19 @@ I used the following API endpoints from the OpenWeatherMap:
 
 ## Icons
 
-Source:
-
 * [Weather Icons](http://erikflowers.github.io/weather-icons/)
 * [FontAwesome](https://fontawesome.com/)
 
-## See the project
+## Examples
+
+### Mobile
+
+![Mobile Portrait](./examples/mobile-portrait.png)
+
+### Computer
+
+![Computer](./examples/computer.png)
+
+## Live
 
 https://francheska-guzman.github.io/weather-forecast/
