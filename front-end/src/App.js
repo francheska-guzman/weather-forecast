@@ -60,7 +60,7 @@ class App extends Component {
 // To try other cities: http://openweathermap.org/help/city_list.txt 
 
   componentWillMount() {
-    var api = 'http://api.openweathermap.org/data/2.5/';
+    var api = 'https://api.openweathermap.org/data/2.5/';
     var cities = 'group?id=5128581,4887398,4180439,5809844,5391959';
     var system = "&units=imperial";
     /*

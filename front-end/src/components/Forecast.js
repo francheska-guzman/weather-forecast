@@ -123,7 +123,7 @@ class Forecast extends Component {
     var days = [];
 
     if (this.state.city.id !== undefined) {
-      var api = 'http://api.openweathermap.org/data/2.5/forecast';
+      var api = 'https://api.openweathermap.org/data/2.5/forecast';
       var cityId = "?id=" + this.state.city.id;
       var system = "&units=imperial";
       /*
