@@ -413,6 +413,10 @@ h3, .summary-units {
   font-size: 17px;
 }
 
+h4 {
+  font-size: 60px; 
+}
+
 h5 {
   margin: 10px 0 0 0;
 }
@@ -421,8 +425,10 @@ h6 {
   font-size: 14px;
 }
 
-h4 {
-  font-size: 60px; 
+.column-row > h6 {
+  font-size: 13px;
+  margin: 2px;
+  display: block;
 }
 
 .five-days-weather-image > i {
