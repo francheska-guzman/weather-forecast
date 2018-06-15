@@ -57,19 +57,11 @@ class App extends Component {
     }
   }
 
-/* 
-  Madrid, Spain             3117735
-  New York (City), US       5128581
-  Rio de Janeiro, Brazil    3451190
-  Saint Petersburg, Russia  498817
-  San Juan, Puerto Rico     4568127 
-  
-  To try other cities: http://openweathermap.org/help/city_list.txt 
-*/
+// To try other cities: http://openweathermap.org/help/city_list.txt 
 
   componentWillMount() {
     var api = 'http://api.openweathermap.org/data/2.5/';
-    var cities = 'group?id=5128581,498817,3451190,3117735,4568127';
+    var cities = 'group?id=5128581,4887398,4180439,5809844,5391959';
     var system = "&units=imperial";
     /*
     My two API keys in case of any issue are: 

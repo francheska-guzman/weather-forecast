@@ -11,8 +11,8 @@ COLOR GUIDE
 Black		#000000
 Blue 		#45658e, #0f3150
 Grey		#bac0c6, #a5aaaf, #787f87
-White 	#ffffff
-Yellow  #ffc406, #ad8401
+White 		#ffffff
+Yellow  	#ffc406, #ad8401
 
 */
 
@@ -82,10 +82,6 @@ h6 {
   color: #ffc406;
   display: inline;
   margin: 5px;
-}
-
-li {
-  text-align: left;
 }
 
 .flex {
@@ -161,6 +157,10 @@ nav {
   max-width: 900px;
 }
 
+li {
+  text-align: left;
+}
+
 .navigation-link a {
   text-decoration: none;
   font-size: 30px;
@@ -222,7 +222,7 @@ nav {
   height: auto;
   margin: 10px auto;
   padding: 30px;
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.07);
 }
 
 .forecast-container {
@@ -238,27 +238,29 @@ nav {
 }
 
 .five-day-forecast {
+  display: flex;
+  flex-direction: row;
   width: auto;
-  height: 300px;
+  height: auto;
   margin: 10px auto;
   padding: 0px;
   background: rgba(0, 0, 0, 0.2);
+}
+
+.row {
+  display: flex;
+  flex: 1;
 }
 
 .data-type {
   font-size: 12px;
 }
 
-.five-day-forecast {
-  display: flex;
-  flex-direction: row;
-  height: auto;
-}
-
 /* =============== ForecastSummary =============== */
 
 .current-city {
   height: auto;
+  background: rgba(0, 0, 0, 0.12);
 }
 
 .current-city > h5 {
@@ -352,6 +354,16 @@ h4 {
   font-size: 50px; 
 }
 
+.five-days-weather-image > i {
+  font-size: 100px;
+  margin: 5px 0;
+}
+
+.column-row > i {
+  font-size: 100px;
+  margin: 15px 0 0 0;
+}
+
 .row-column {
   flex-direction: column;
 }
@@ -375,11 +387,12 @@ h4 {
 }
 
 .five-data {
-  padding: 0 30%;
+  padding: 0 0 0 15%;
 }
 
-.five-day-forecast {
-  flex-direction: column;
+.row {
+  display: block;
+  padding: 30px 0;
 }
 
 }
@@ -411,6 +424,14 @@ h6 {
 h4 {
   font-size: 60px; 
 }
+
+.five-days-weather-image > i {
+  font-size: 80px;
+}
+
+.column-row > i {
+  font-size: 80px;
+}
   
 .home-summary {
   flex-direction: column;
@@ -430,7 +451,12 @@ h4 {
 }
 
 .five-data {
-  padding: 0 10%;
+  padding: 0 20%;
+}
+
+.five-day-forecast {
+  flex-direction: column;
+  padding: 20px;
 }
 
 .forecast-container {
@@ -438,6 +464,10 @@ h4 {
   height: auto;
   margin: auto;
   padding: 0px;
+}
+
+.row {
+  padding: 0px 0;
 }
 
 }
