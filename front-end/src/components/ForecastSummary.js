@@ -79,7 +79,7 @@ class ForecastSummary extends Component {
     return (
       <div className="forecast-summary-wrapper">
         <div className="current-city"> 
-          <h5>Today's weather in</h5>
+          <h5>Today&#39;s weather in</h5>
           <h2>{this.props.state.city.name}</h2>
           <h3>{this.props.state.weather.description}</h3>
           <div className="flex">

@@ -24,11 +24,15 @@ I used the following API endpoints from the OpenWeatherMap:
 * [Weather Icons](http://erikflowers.github.io/weather-icons/)
 * [FontAwesome](https://fontawesome.com/)
 
-## Examples
+## Cross-browser Compatibility
 
 ### Mobile
 
 ![Mobile](./examples/mobile.png)
+
+### iPad
+
+![iPad](./examples/ipad.png)
 
 ### Computer
 
