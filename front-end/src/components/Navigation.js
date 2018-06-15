@@ -8,7 +8,10 @@ class Navigation extends Component {
     return (
       <nav>
         <li className="navigation-link">
-        <NavLink to="/weather-forecast">⬅</NavLink></li>
+          <NavLink to="/weather-forecast">
+            <i className="fa fa-chevron-left"></i>
+          </NavLink>
+        </li>
       </nav>
     );
   }
