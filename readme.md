@@ -28,7 +28,7 @@ I used the following API endpoints from the OpenWeatherMap:
 
 ### Mobile
 
-![Mobile Portrait](./examples/mobile-portrait.png)
+![Mobile](./examples/mobile.png)
 
 ### Computer
 
