@@ -4,7 +4,7 @@ Agency Within <b>|</b> Front End Web Developer Test <b>|</b> Francheska Guzman
 
 ### Description
 
-Weather Forecast is a web application that provides information such as weather condition and temperature of five cities. It is designed for computer, tablet, and mobile.
+The Weather Forecast is a web application that provides information such as weather condition and temperature of five cities. It is designed for computer, tablet, and mobile.
 
 ### Technologies Used
 
