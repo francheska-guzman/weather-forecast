@@ -21,7 +21,10 @@ I used the following API endpoints from the OpenWeatherMap:
 
 ## Icons
 
-Source: [Weather Icons](http://erikflowers.github.io/weather-icons/)
+Source:
+
+* [Weather Icons](http://erikflowers.github.io/weather-icons/)
+* [FontAwesome](https://fontawesome.com/)
 
 ## See the project
 
