@@ -100,7 +100,7 @@ class Forecast extends Component {
             wind: this.props.state.fourth_city_wind
           })
         }
-        else if (city === this.props.state.fifth_city.name) {
+        else {
           this.setState({
             city: this.props.state.fifth_city,
             clouds: this.props.state.fifth_city_clouds,
@@ -110,9 +110,6 @@ class Forecast extends Component {
             weather: this.props.state.fifth_city_weather,
             wind: this.props.state.fifth_city_wind
           })
-        }
-        else {
-            window.location.href = "/weather-forecast/Page404";
         }
       }
     // console.log(this.state);

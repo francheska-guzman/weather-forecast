@@ -4,7 +4,6 @@ import Forecast from './components/Forecast';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import Home from './components/Home';
-import PageNotFound from './components/PageNotFound';
 import Navigation from './components/Navigation';
 import {
         BrowserRouter as Router,
@@ -131,8 +130,6 @@ class App extends Component {
           <Switch>
             <Route exact path="/weather-forecast/" component={() => 
                 (<Home state={this.state} />) }/>
-            <Route path="/weather-forecast/Page404" component={() => 
-                (<PageNotFound />) }/>
             <Route path="/weather-forecast/:city" component={() => 
                 (<Forecast state={this.state} />) }/>
           </Switch>
