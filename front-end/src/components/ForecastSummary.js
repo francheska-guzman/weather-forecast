@@ -80,27 +80,27 @@ class ForecastSummary extends Component {
       <div className="forecast-summary-wrapper">
         <div className="current-city"> 
           <h5>Today&#39;s weather in</h5>
-          <h2>{this.props.state.city.name}</h2>
-          <h3>{this.props.state.weather.description}</h3>
+          <h2>{this.props.state.day_1_city.name}</h2>
+          <h3>{this.props.state.day_1_weather.description}</h3>
           <div className="flex">
-            <section className="column-row">{this.handleWeatherImage(this.props.state.weather.id)}</section>
+            <section className="column-row">{this.handleWeatherImage(this.props.state.day_1_weather.id)}</section>
             <section className="column-row">
-              <h4>{this.changeToInteger(this.props.state.main.temp)}<sup className="summary-units"> °F</sup></h4>
-              <h6>Min: {this.changeToInteger(this.props.state.main.temp_min)}<sup> °F</sup></h6>
-              <h6>Max: {this.changeToInteger(this.props.state.main.temp_max)}<sup> °F</sup></h6>
+              <h4>{this.changeToInteger(this.props.state.day_1_main.temp)}<sup className="summary-units"> °F</sup></h4>
+              <h6>Min: {this.changeToInteger(this.props.state.day_1_main.temp_min)}<sup> °F</sup></h6>
+              <h6>Max: {this.changeToInteger(this.props.state.day_1_main.temp_max)}<sup> °F</sup></h6>
             </section>
           </div>
         </div>
         <div className="current-weather">
             <section className="column-row">
-              <h5>Sunrise: <span className="forecast-data">{this.sunriseSunset(this.props.state.sys.sunrise)} <span className="data-type">GMT -0400</span></span></h5>
-              <h5>Visibility: <span className="forecast-data">{this.visibility(this.props.state.city.visibility)} <span className="data-type">mi</span></span></h5>
-              <h5>Wind: <span className="forecast-data">{this.wind(this.props.state.wind.speed)} <span className="data-type">mph</span></span></h5>
+              <h5>Sunrise: <span className="forecast-data">{this.sunriseSunset(this.props.state.day_1_sys.sunrise)} <span className="data-type">GMT -0400</span></span></h5>
+              <h5>Visibility: <span className="forecast-data">{this.visibility(this.props.state.day_1_city.visibility)} <span className="data-type">mi</span></span></h5>
+              <h5>Wind: <span className="forecast-data">{this.wind(this.props.state.day_1_wind.speed)} <span className="data-type">mph</span></span></h5>
             </section>
             <section className="column-row">
-              <h5>Sunset: <span className="forecast-data">{this.sunriseSunset(this.props.state.sys.sunset)} <span className="data-type">GMT -0400</span></span></h5>
-              <h5>Humidity: <span className="forecast-data">{this.props.state.main.humidity}<span className="data-type">%</span></span></h5>
-              <h5>Pressure: <span className="forecast-data">{this.pressure(this.props.state.main.pressure)}<span className="data-type"> inHg</span></span></h5>
+              <h5>Sunset: <span className="forecast-data">{this.sunriseSunset(this.props.state.day_1_sys.sunset)} <span className="data-type">GMT -0400</span></span></h5>
+              <h5>Humidity: <span className="forecast-data">{this.props.state.day_1_main.humidity}<span className="data-type">%</span></span></h5>
+              <h5>Pressure: <span className="forecast-data">{this.pressure(this.props.state.day_1_main.pressure)}<span className="data-type"> inHg</span></span></h5>
             </section>
         </div>
       </div>
