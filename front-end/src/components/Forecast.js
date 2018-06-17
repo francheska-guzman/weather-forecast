@@ -116,13 +116,28 @@ class Forecast extends Component {
         return res.json();
       }).then(data => {
         // console.log(data);
+
+        var today = new Date();
+        var dd = today.getDate();
+        var mm = today.getMonth()+1;
+        var yyyy = today.getFullYear();
+        if(dd < 10){
+            dd = '0' + dd;
+        } 
+        if(mm < 10){
+            mm = '0' + mm;
+        } 
+        var yearMonthDay = yyyy+'-'+mm+'-'+dd;
+        // console.log(yearMonthDay);
+
         for(var i = 0; i < data.list.length; i += 1) {
           // console.log(data.list[i].dt_txt.split(' ')[1]);
-          if(data.list[i].dt_txt.split(' ')[1] === "21:00:00") {
+          if(data.list[i].dt_txt.split(' ')[0] !== yearMonthDay && data.list[i].dt_txt.split(' ')[1] === "00:00:00") {
             days.push(data.list[i]);
             // console.log(days);
           }
         }
+
         // Saving the next four days.
         this.setState({
           day_2: days[1],
