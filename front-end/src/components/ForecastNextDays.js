@@ -77,10 +77,9 @@ class ForecastNextDays extends Component {
         <h3>{this.props.weather.description}</h3>
         <section className="five-days-weather-image">{this.handleWeatherImage(this.props.weather.id)}</section>
         <section className="five-data">
-          <h4>{this.changeToInteger(this.props.main.temp)}<sup className="summary-units"> °F</sup></h4>
           <section className="five-data-continue">
-            <h5>Min: <span className="forecast-data">{this.changeToInteger(this.props.main.temp_min)}<sup> °F</sup></span></h5>
-            <h5>Max: <span className="forecast-data">{this.changeToInteger(this.props.main.temp_max)}<sup> °F</sup></span></h5>
+            <h5>Min: <span className="forecast-data">{this.changeToInteger(this.props.min)}<sup> °F</sup></span></h5>
+            <h5>Max: <span className="forecast-data">{this.changeToInteger(this.props.max)}<sup> °F</sup></span></h5>
             <h5>Wind: <span className="forecast-data">{this.wind(this.props.wind.speed)} <span className="data-type">mph</span></span></h5>
             <h5>Humidity: <span className="forecast-data">{this.props.main.humidity}<span className="data-type">%</span></span></h5>
             <h5>Pressure: <span className="forecast-data">{this.pressure(this.props.main.pressure)}<span className="data-type"> inHg</span></span></h5>
