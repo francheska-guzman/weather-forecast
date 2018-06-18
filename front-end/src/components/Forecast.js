@@ -143,7 +143,7 @@ class Forecast extends Component {
           }
         }
 
-        console.log(days);
+        // console.log(days);
 
         var temp_max = [];
         var temp_min = [];
