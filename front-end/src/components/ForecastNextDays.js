@@ -30,11 +30,12 @@ class ForecastNextDays extends Component {
       // console.log(this.props)
 
       // Show day of the week instead of YYYY-MM-DD format.
-      return isNaN(dayOfWeek) ? null : ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"][dayOfWeek];
+      return isNaN(dayOfWeek) ? null : ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"][dayOfWeek];
     }
   }
 
   handleWeatherImage(id) {
+    // console.log(this.props);
     // console.log(id);
     if (id >= 200 && id <= 232) { return <i className="wi wi-thunderstorm"></i> }
     else if (id >= 300 && id <= 321) { return <i className="wi wi-sleet"></i> }

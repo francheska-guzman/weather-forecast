@@ -100,12 +100,9 @@ class Forecast extends Component {
           })
         }
       }
-    // console.log(this.state);
   }
 
   componentDidMount() {
-    // console.log(this.state);
-
     if (this.state.day_1_city.id !== undefined) {
       var api = 'https://api.openweathermap.org/data/2.5/forecast';
       var cityId = "?id=" + this.state.day_1_city.id;
@@ -140,12 +137,13 @@ class Forecast extends Component {
         var days = [];
 
         for(var i = 0; i < data.list.length; i += 1) {
-          // console.log(data.list[i].dt_txt.split(' ')[1]);
           if(data.list[i].dt_txt.split(' ')[0] !== yearMonthDay && data.list[i].dt_txt.split(' ')[1] === "00:00:00") {
+            // console.log(data.list[i])
             days.push(data.list[i]);
-            // console.log(days);
           }
         }
+
+        console.log(days);
 
         var temp_max = [];
         var temp_min = [];
@@ -204,7 +202,6 @@ class Forecast extends Component {
           day_5_max: maxD5,
           day_5_min: minD5,
         });
-        // console.log(days[4]);
       }).catch((error) => {
       console.log(error);
       })
