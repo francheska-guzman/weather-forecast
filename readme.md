@@ -1,7 +1,5 @@
 # Weather Forecast
 
-Agency Within <b>|</b> Front End Developer Test
-
 Francheska Guzman
 
 ## Description

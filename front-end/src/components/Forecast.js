@@ -137,7 +137,7 @@ class Forecast extends Component {
         var days = [];
 
         for(var i = 0; i < data.list.length; i += 1) {
-          if(data.list[i].dt_txt.split(' ')[0] !== yearMonthDay && data.list[i].dt_txt.split(' ')[1] === "00:00:00") {
+          if(data.list[i].dt_txt.split(' ')[0] !== yearMonthDay && data.list[i].dt_txt.split(' ')[1] === "03:00:00") {
             // console.log(data.list[i])
             days.push(data.list[i]);
           }
