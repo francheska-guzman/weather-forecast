@@ -34,11 +34,6 @@ body {
   letter-spacing: 1px;
 }
 
-html {
-    overflow: hidden;
-    height: 100%;
-}
-
 h1 {
   background: -webkit-linear-gradient( #ad8401 0, #ffc406 66%);
   -webkit-background-clip: text;
