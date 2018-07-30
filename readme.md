@@ -1,10 +1,6 @@
 # Weather Forecast
 
-Francheska Guzman
-
-## Description
-
-The Weather Forecast is a web application that provides information such as weather condition and temperature of five cities. It is designed for computer, tablet, and mobile.
+The Weather Forecast web application provides actual data of five cities such as minimum and maximum temperature, wind, humidity, and pressure.
 
 ## Technologies Used
 
