@@ -54,7 +54,7 @@ class App extends Component {
 
 // To try other cities: http://openweathermap.org/help/city_list.txt 
 	
-  function initializeReactGA() {
+  initializeReactGA() {
 	ReactGA.initialize('UA-132345211-1');
 	ReactGA.pageview('/weather-forecast');
   }
