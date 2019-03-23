@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import ReactGA from 'react-ga';
 import Forecast from './components/Forecast';
 import Footer from './components/Footer';
 import Header from './components/Header';
@@ -52,6 +53,11 @@ class App extends Component {
   }
 
 // To try other cities: http://openweathermap.org/help/city_list.txt 
+	
+  function initializeReactGA() {
+	ReactGA.initialize('UA-132345211-1');
+	ReactGA.pageview('/weather-forecast');
+  }
 
   componentWillMount() {
     var api = 'https://api.openweathermap.org/data/2.5/';
