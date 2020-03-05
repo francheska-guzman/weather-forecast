@@ -61,7 +61,7 @@ class App extends Component {
 
   componentWillMount() {
     var api = 'https://api.openweathermap.org/data/2.5/';
-    var cities = 'group?id=5128581,4887398,4180439,5809844,5391959';
+    var cities = 'group?id=5128581,3451190,4568138,498817,3128760';
     var system = "&units=imperial";
     /*
     My two API keys in case of any issue are: 
