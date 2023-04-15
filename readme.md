@@ -4,7 +4,7 @@ The Weather Forecast web application provides actual data of five cities such as
 
 ## Technologies Used
 
-HTML, CSS, JavaScript, JSX, and React.
+HTML, CSS, JSX, and React.
 
 ## OpenWeatherMap API
 
